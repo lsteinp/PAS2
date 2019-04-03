@@ -1,8 +1,8 @@
 FROM node:8
 
 # copy code
-WORKDIR /paisagem-api
-COPY . /paisagem-api
+WORKDIR /Hublle
+COPY . /Hublle
 
 RUN pwd
 RUN ls -la
