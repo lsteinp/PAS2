@@ -1,12 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import {MongooseModule} from '@nestjs/mongoose';
-import { UsersModule } from './users/users.module';
+import { EventModule } from './event/event.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/hubble-data'), UsersModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [MongooseModule.forRoot('mongodb://localhost/hubble-data'), EventModule],
 })
 export class AppModule {}
