@@ -73,12 +73,22 @@ export const EventSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
-        createdAt: {
-            type: Date,
-            default: Date.now,
-        },
     },
-});
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now,
+    },
+},
+{
+    toJSON: {
+      versionKey: false,
+      virtuals: true,
+    },
+  });
 
 const Event = mongoose.model('Event', EventSchema);
 module.exports = Event;
