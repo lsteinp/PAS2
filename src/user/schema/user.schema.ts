@@ -23,31 +23,34 @@ export const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    password: {
+        type: String,
+        required: true,
+    },
+    interestCategories: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Category',
+        },
+    ],
     favoritedEvents: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Event',
         },
     ],
-
     participatedEvents: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Event',
         },
     ],
-
     createdEvents: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Event',
         },
     ],
-    password: {
-        type: String,
-        required: true,
-    },
-
     createdAt: {
         type: Date,
         default: Date.now,

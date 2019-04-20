@@ -17,16 +17,22 @@ export const EventSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    category: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category',
-        require: true,
-    },
-    // tag: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Tag',
-    //     require: false,
-    // }],
+     category: {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: 'Category',
+         require: false,
+     },
+     tag: [{
+         type: mongoose.Schema.Types.ObjectId,
+         ref: 'Tag',
+         require: false,
+     }],
+    confirmedUsers: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+    ],
     picture: {
         type: String,
     },
@@ -73,6 +79,16 @@ export const EventSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
+    },
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        require: false,
+    },
+    approvedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        require: false,
     },
     createdAt: {
         type: Date,

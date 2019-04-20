@@ -1,17 +1,14 @@
 import { CategorySchema } from './../schema/category.schema';
-
-import { TagModel } from './../models/tag.model';
 import { CategoryModel } from './../models/category.model';
-import { EventModel } from './../models/event.model';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable, Body, Res } from '@nestjs/common';
 import { Model } from 'mongoose';
 
 @Injectable()
-export class EventService {
-    constructor(@InjectModel('Event') private readonly model: Model<EventModel>) { }
+export class CategoryService {
+    constructor(@InjectModel('Category') private readonly model: Model<CategoryModel>) { }
 
-    async get(): Promise<EventModel[]> {
+    async get(): Promise<CategoryModel[]> {
         try {
             return await this.model.find().exec();
         } catch (e) {
@@ -19,10 +16,10 @@ export class EventService {
         }
     }
 
-    async create(model: EventModel): Promise<EventModel> {
+    async create(model: CategoryModel): Promise<CategoryModel> {
         try {
-            const event = new this.model(model);
-            return await event.save();
+            const category = new this.model(model);
+            return await category.save();
         }   catch  (e) {
             return e;
         }

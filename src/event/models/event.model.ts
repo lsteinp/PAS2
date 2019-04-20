@@ -9,6 +9,7 @@ export class EventModel {
     public endDate: string;
     public price: number;
     public hours: number;
+    public observations: string;
     public address: {
          street: string;
          complements: string;
@@ -18,5 +19,5 @@ export class EventModel {
          state: string;
      };
      public category: CategoryModel;
-    // public tag: TagModel[];
+     public tag: TagModel;
 }
