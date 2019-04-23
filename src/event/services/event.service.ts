@@ -30,4 +30,8 @@ export class EventService {
             return e;
         }
     }
+
+    async getEventDetail(id: string){
+        return this.model.find(id);
+    }
 }

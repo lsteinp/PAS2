@@ -1,8 +1,9 @@
 import { Model } from 'mongoose';
 import { EventService } from './../services/event.service';
 import { EventModel } from './../models/event.model';
-import { Get, Controller, Post, Body, Res } from '@nestjs/common';
+import { Get, Controller, Post, Body, Res, Query, Param } from '@nestjs/common';
 import { EventSchema } from '../schema/event.Schema';
+import { async } from 'rxjs/internal/scheduler/async';
 
 @Controller('event')
 export class EventController {
@@ -11,12 +12,8 @@ export class EventController {
     @Post()
     async create(@Body() model: EventModel, @Res() res) {
         try {
-            // const event = await this.service.create(model);
-            var random = require('random-object-generator');
-            var nn = random.randomObject( new EventModel() );
-            console.log(random);
-            console.log(nn);
-            return res.status(200).json( nn );
+            const event = await this.service.create(model);
+            return res.status(200).json(event);
         } catch (e) {
             return res.status(500).json(e);
         }
@@ -31,5 +28,11 @@ export class EventController {
         } catch (e) {
             return res.status(500).json(e);
         }
+    }
+
+    @Get(':id')
+    getEventDetail(@Param() params, @Res() res): string {
+        const event = this.service.getEventDetail(params.id);
+        return res.status(200).json(event);
     }
 }
