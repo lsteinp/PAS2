@@ -4,38 +4,38 @@ node {
 
     try {
 
-        stage('Delete Repo hubble'){
-            sh 'ssh root@10.32.223.4 -p 5439 "rm -rf /opt/docker/Hublle/API"'
-            sh 'ssh root@10.32.223.4 -p 5439 "rm -rf /opt/docker/Hublle/front"'
+        stage('Delete Repo Hubble'){
+            sh 'ssh root@10.32.223.4 -p 5439 "rm -rf /opt/docker/hubble/api"'
+            sh 'ssh root@10.32.223.4 -p 5439 "rm -rf /opt/docker/hubble/web"'
         }
 
-        stage('Clone Repos Paisagem Front e Bach'){
-           sh 'ssh root@10.32.223.4 -p 5439 "git clone --depth 1 --branch homo http://projetos@www.tools.ages.pucrs.br/Hublle/API.git /opt/docker/Hublle/API"'
-           sh 'ssh root@10.32.223.4 -p 5439 "git clone --depth 1 --branch homo http://projetos@www.tools.ages.pucrs.br/Hublle/front.git /opt/docker/Hublle/front"'
+        stage('Clone Repos Hubble Front e Back'){
+           sh 'ssh root@10.32.223.4 -p 5439 "git clone --depth 1 --branch homo http://www.tools.ages.pucrs.br/Hublle/API.git /opt/docker/hubble/api"'
+           sh 'ssh root@10.32.223.4 -p 5439 "git clone --depth 1 --branch homo http://www.tools.ages.pucrs.br/Hublle/Front-angular.git /opt/docker/hubble/web"'
         }
 
-        stage('Install and Build Paisagem Front Angular'){
-            sh 'ssh root@10.32.223.4 -p 5439 "/opt/docker/paisagem/ic.sh"'
+        stage('Install and Build Hubble Front Angular'){
+            sh 'ssh root@10.32.223.4 -p 5439 "nvm use 8.9.3; cd /opt/docker/hubble/web; npm install; ng build --hml -e hml"'
         }
 
         stage('Down Images DB, Api and Web'){
-           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/Hublle/API; docker-compose down; docker-compose -f docker-compose-web.yml down"'
+           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/hubble/api; docker-compose down; docker-compose -f ../web/docker-compose.yml down"'
         }
 
         stage('Build and Up Docker Image Api'){
-           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/Hublle/API; docker-compose up --build -d"'
+           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/hubble/api; docker-compose up --build -d"'
         }
 
         stage('Build and Up Docker Image Web'){
-           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/Hublle/API; docker-compose -f docker-compose-web.yml up --build -d"'
+           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/hubble/web; docker-compose up --build -d"'
         }
 
         stage('Success'){
             mail body: 'project build successful in HML',
                      from: 'jenkins@ages.com',
-                     replyTo: 'cassio.trindade@pucrs.br',
-                     subject: 'Success CI Paissagem',
-                     to: 'cassio.trindade@pucrs.br'
+                     replyTo: 'ramon.correa@acad.pucrs.br',
+                     subject: 'Success CI Hubble',
+                     to: 'ramon.correa@acad.pucrs.br'
         }
 
     }
@@ -45,9 +45,9 @@ node {
 
             mail body: "project build error is here: ${env.BUILD_URL}" ,
             from: 'jenkins@ages.com',
-            replyTo: 'cassio.trindade@pucrs.br',
-            subject: 'Error CI Paisagem',
-            to: 'cassio.trindade@pucrs.br'
+            replyTo: 'ramon.correa@acad.pucrs.br',
+            subject: 'Error CI Hubble',
+            to: 'ramon.correa@acad.pucrs.br'
 
         throw err
     }

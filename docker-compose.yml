@@ -2,36 +2,38 @@
 
 version: '2'
 services:
-  paisagemdb:
-    container_name: paisagemdb
-    image: 'mysql:5.7'
+  hubbledb:
+    container_name: hubbledb
+    image: 'mongo:latest'
     ports:
-      - "3310:3306"
+      - "27018:27017"
     volumes:
       - /vol/ages_paisagem/db:/var/lib/mysql:rw
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     environment:
-      MYSQL_ROOT_PASSWORD: "senha"
-      MYSQL_DATABASE: "ages_paisagem"
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ages_hubble
+      MONGO_INITDB_DATABASE: hubble
     networks:
-      - paisagem-network
+      - hubble-network
 
-  paisagemapi:
-    container_name: paisagemapi
+  hubbleapi:
+    container_name: hubbleapi
     build:
       context: .
-      dockerfile: Dockerfile_api
-    image: paisagem-api:latest
+      dockerfile: Dockerfile
+    image: hubble-api:latest
     depends_on:
-      - "paisagemdb"
+      - "hubbledb"
     expose:
-      - "4000"
+      - "6725"
     ports:
-      - "4503:4000"
+      - "6725:4000"
     environment:
       - NODE_ENV=production
-    command: ["./wait-for-it.sh", "-t", "0", "paisagemdb:3306", "--", "npm","start", ]
+    command: ["./wait-for-it.sh", "-t", "0", "hubbledb:27018", "--", "npm","start", ]
     networks:
-      - paisagem-network
+      - hubble-network
 
 networks:
-  paisagem-network:
+  hubble-network:
