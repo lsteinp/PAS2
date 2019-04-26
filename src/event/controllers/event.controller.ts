@@ -23,7 +23,7 @@ export class EventController {
     async get(@Res() res): Promise<EventModel[]> {
         try {
             const events = await this.service.get();
-            // console.log(JSON.stringify(events));
+            console.log(JSON.stringify(events));
             return res.status(200).json(events);
         } catch (e) {
             return res.status(500).json(e);
@@ -31,8 +31,8 @@ export class EventController {
     }
 
     @Get(':id')
-    getEventDetail(@Param() params, @Res() res): string {
-        const event = this.service.getEventDetail(params.id);
+    async getEventDetail(@Param('id') id: string, @Res() res): Promise<EventModel> {
+        var event = await this.service.getEventDetail(id);
         return res.status(200).json(event);
     }
 }
