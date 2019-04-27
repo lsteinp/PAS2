@@ -9,7 +9,7 @@ cd /opt/docker/hubble/web
 npm install
 ng build
 
-mv -f /opt/docker/hubble/web/build /opt/docker/hubble/api/web/build
+mv -f /opt/docker/hubble/web/dist /opt/docker/hubble/api/
 
 cd /opt/docker/hubble/api
 
