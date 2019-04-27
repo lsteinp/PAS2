@@ -8,12 +8,7 @@ services:
     ports:
       - "27018:27017"
     volumes:
-      - /vol/ages_paisagem/db:/var/lib/mysql:rw
-      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: ages_hubble
-      MONGO_INITDB_DATABASE: hubble
+      - /vol/ages_hublle/db:/data/db
     networks:
       - hubble-network
 
