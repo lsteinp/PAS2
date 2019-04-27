@@ -14,4 +14,4 @@ services:
       - hubble-network
 
 networks:
-    hublle-network:
+    hubble-network:
