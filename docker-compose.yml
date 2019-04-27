@@ -26,7 +26,7 @@ services:
       - "6725:4000"
     environment:
       - NODE_ENV=production
-    command: ["./wait-for-it.sh", "-t", "0", "hubbledb:27018", "--", "npm","start", ]
+    command: ["npm","start", ]
     networks:
       - hubble-network
 
