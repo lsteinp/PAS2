@@ -30,4 +30,8 @@ export class EventService {
             return e;
         }
     }
+
+    async getEventDetail(id: string): Promise<EventModel> {
+        return await this.model.findOne({_id: id}).exec()
+    }
 }
