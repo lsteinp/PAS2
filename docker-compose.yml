@@ -23,7 +23,7 @@ services:
     expose:
       - "6725"
     ports:
-      - "6725:4000"
+      - "6725:3000"
     environment:
       - NODE_ENV=production
     command: ["npm","start", ]
