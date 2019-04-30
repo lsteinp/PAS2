@@ -23,7 +23,7 @@ node {
         }
 
         stage('Down Images DB, Api and Web'){
-           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/hubble/api; docker network disconnect --force hubble-network hubbleapi; docker-compose down; docker-compose -f docker-compose.yml down"'
+           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/hubble/api; docker network disconnect --force api_hubble-network hubbleapi; docker-compose down; docker-compose -f docker-compose.yml down"'
         }
 
         stage('Build and Up Docker Image Api'){
