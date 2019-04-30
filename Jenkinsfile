@@ -15,7 +15,7 @@ node {
         }
 
         stage('Install and Build Hubble Front Angular'){
-            sh 'ssh root@10.32.223.4 -p 5439 "nvm use 10.15.3; cd /opt/docker/hubble/web; npm install; ng build --hml -e hml"'
+            sh 'ssh root@10.32.223.4 -p 5439 "nvm use 10.15.3; cd /opt/docker/hubble/web; npm install; ng build"'
         }
 
         stage('Move web directory to API'){
