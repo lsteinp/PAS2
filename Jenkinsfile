@@ -27,11 +27,11 @@ node {
         }
 
         stage('Build and Up Docker Image Api'){
-           sh 'ssh root@10.32.223.4 -p 5439 "pwd; ls -la; docker-compose up --build -d"'
+           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/hubble/api; docker-compose up --build -d"'
         }
 
         stage('Build and Up Docker Image Web'){
-           sh 'ssh root@10.32.223.4 -p 5439 "docker-compose -f docker-compose-web.yml up --build -d"'
+           sh 'ssh root@10.32.223.4 -p 5439 "cd /opt/docker/hubble/api; docker-compose -f docker-compose-web.yml up --build -d"'
         }
 
         stage('Success'){
