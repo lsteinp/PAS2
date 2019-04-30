@@ -22,6 +22,7 @@ export class EventController {
     @Get()
     async get(@Res() res): Promise<EventModel[]> {
         try {
+            console.log(process.env.NODE_ENV);
             const events = await this.service.get();
             console.log(JSON.stringify(events));
             return res.status(200).json(events);
