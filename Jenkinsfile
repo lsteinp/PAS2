@@ -10,8 +10,8 @@ node {
         }
 
         stage('Clone Repos Hubble Front e Back'){
-           sh 'ssh root@10.32.223.4 -p 5439 "git clone --depth 1 --branch dev http://www.tools.ages.pucrs.br/Hublle/API.git /opt/docker/hubble/api"'
-           sh 'ssh root@10.32.223.4 -p 5439 "git clone --depth 1 --branch develop http://www.tools.ages.pucrs.br/Hublle/Front-angular.git /opt/docker/hubble/web"'
+           sh 'ssh root@10.32.223.4 -p 5439 "git clone --depth 1 --branch hml http://www.tools.ages.pucrs.br/Hublle/API.git /opt/docker/hubble/api"'
+           sh 'ssh root@10.32.223.4 -p 5439 "git clone --depth 1 --branch hml http://www.tools.ages.pucrs.br/Hublle/Front-angular.git /opt/docker/hubble/web"'
         }
 
         stage('Install and Build Hubble Front Angular'){
