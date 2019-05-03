@@ -1,0 +1,17 @@
+# How to run:
+
+version: '2'
+services:
+  hubbleweb:
+    container_name: hubbleweb
+    build:
+      context: .
+      dockerfile: Dockerfile_web
+    image: hubble-web:latest
+    ports:
+      - "6720:80"
+    networks:
+      - hubble-network
+
+networks:
+    hubble-network:
