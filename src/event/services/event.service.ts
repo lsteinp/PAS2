@@ -21,9 +21,6 @@ export class EventService {
 
     async create(model: EventModel): Promise<EventModel> {
         try {
-            // const category = new CategoryModel(model.category.title);
-            // const teste = new this.model(category);
-            // teste.save();
             const event = new this.model(model);
             return await event.save();
         }   catch  (e) {
