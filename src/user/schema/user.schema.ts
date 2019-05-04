@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+var uniqueValidator = require('mongoose-unique-validator');
 
 const typeRole = ['Admin', 'User', 'Organizer'];
 
@@ -22,6 +23,7 @@ export const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
+        unique: true
     },
     password: {
         type: String,
@@ -66,6 +68,6 @@ export const UserSchema = new mongoose.Schema({
       virtuals: true,
     },
   });
-
+UserSchema.plugin(uniqueValidator);
 const User = mongoose.model('User', UserSchema);
 module.exports = User;
