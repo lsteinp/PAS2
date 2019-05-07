@@ -30,17 +30,6 @@ export class EventController {
         }
     }
 
-    @Get('vamoVe')
-    async getEnv(@Res() res): Promise<EventModel[]> {
-        try {
-            const events = await this.service.get();
-            events[0].title = process.env.NODE_ENV;
-            return res.status(200).json(events);
-        } catch (e) {
-            return res.status(500).json(e);
-        }
-    }
-
     @Get(':id')
     async getEventDetail(@Param('id') id: string, @Res() res): Promise<EventModel> {
         var event = await this.service.getEventDetail(id);
