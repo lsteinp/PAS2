@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import {MongooseModule} from '@nestjs/mongoose';
 import { EventModule } from './event/event.module';
-import { UserModule } from './user/user.module';
+import Environment  from './enviroments';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/hubble-data'), EventModule, UserModule],
+  imports: [MongooseModule.forRoot(Environment.api_url), EventModule],
 })
 export class AppModule {}

@@ -1,0 +1,13 @@
+{
+    "ambientes": {
+      "development": {
+        "api_url": "mongodb://localhost/hubble-data"
+      },
+      "hml": {
+        "api_url": "mongodb://hubbledb/hubble-data"
+      },
+      "prod": {
+        "api_url": ""
+      }
+    }
+  }
