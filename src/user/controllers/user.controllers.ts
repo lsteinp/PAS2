@@ -1,7 +1,7 @@
 import { UserModel } from './../models/user.model';
 import { UserService } from './../user.service';
 import { Model } from 'mongoose';
-import { Get, Controller, Post, Body, Res } from '@nestjs/common';
+import { Get, Controller, Post, Body, Res, Param } from '@nestjs/common';
 
 @Controller('user')
 export class UserController {
@@ -26,4 +26,12 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
+
+    @Get(':id')
+    async getUserEvents(@Param('id') id: string,@Res() res): Promise<UserModel>{
+        var user = await this.service.findOneById(id);
+
+        return res.status(200).json(user);
+    }
+  
 }
