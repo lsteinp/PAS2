@@ -13,7 +13,13 @@ export const TagSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-});
+},
+{
+    toJSON: {
+      versionKey: false,
+      virtuals: true,
+    },
+  });
 
 const Tag = mongoose.model('Tag', TagSchema);
 module.exports = Tag;
