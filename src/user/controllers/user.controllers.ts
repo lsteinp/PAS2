@@ -27,10 +27,11 @@ export class UserController {
         }
     }
 
-    @Get(':email')
-    async findOneByEmail(@Param('email') email: string,@Res() res): Promise<UserModel[]> {
-        var user = await this.service.findOneByEmail(email);
+    @Get(':id')
+    async getUserEvents(@Param('id') id: string,@Res() res): Promise<UserModel>{
+        var user = await this.service.findOneById(id);
+
         return res.status(200).json(user);
     }
-
+  
 }
