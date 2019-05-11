@@ -51,7 +51,7 @@ export const EventSchema = new mongoose.Schema({
         required: true,
     },
     hours: {
-        type: Number,
+        type: String,
         required: true,
     },
     address: {

@@ -13,7 +13,13 @@ export const CategorySchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-});
+},
+{
+    toJSON: {
+      versionKey: false,
+      virtuals: true,
+    },
+  });
 
 const Category = mongoose.model('Category', CategorySchema);
 

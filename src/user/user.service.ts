@@ -23,4 +23,8 @@ export class UserService {
             return e;
         }
     }
+
+    async findOneById(id: string): Promise<UserModel> {
+        return await this.model.findOne({_id: id}).exec()
+    }
 }
