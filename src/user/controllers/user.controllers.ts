@@ -1,9 +1,7 @@
 import { UserModel } from './../models/user.model';
 import { UserService } from './../user.service';
-import { AuthGuard} from '@nestjs/passport';
-import { AuthService } from '/home/14202112/Documentos/Hubble/API/API/src/auth/auth.service';
 import { Model } from 'mongoose';
-import { Get, Controller, Post, Body, Res, Param, UseGuards } from '@nestjs/common';
+import { Get, Controller, Post, Body, Res, Param } from '@nestjs/common';
 
 @Controller('user')
 export class UserController {
@@ -20,7 +18,6 @@ export class UserController {
     }
 
     @Get()
-    //@UseGuards(AuthGuard())
     async get(@Res() res): Promise<UserModel[]> {
         try {
             const users = await this.service.get();
@@ -36,12 +33,5 @@ export class UserController {
 
         return res.status(200).json(user);
     }
-
-    // @Get(':email')
-    // async getUserBtEmail(@Param('email') email: string,@Res() res): Promise<UserModel>{
-    //     var user = await this.service.findOneByEmail(email);
-
-    //     return res.status(200).json(user);
-    // }
   
 }
