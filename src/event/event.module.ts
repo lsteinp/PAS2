@@ -1,12 +1,22 @@
+import { TagSchema } from './schema/tag.schema';
+import { CategorySchema } from './schema/category.schema';
+import { CategoryService } from './services/category.service';
+import { TagService } from './services/tag.service';
+import { TagController } from './controllers/tag.controller';
 import { EventSchema } from './schema/event.Schema';
 import { MongooseModule } from '@nestjs/mongoose';
 import { EventService } from './services/event.service';
 import { EventController } from './controllers/event.controller';
 import { Module } from '@nestjs/common';
+import { CategoryController } from './controllers/category.controller';
 
 @Module({
-    imports: [MongooseModule.forFeature([{name: 'Event', schema: EventSchema}])],
-    controllers: [EventController],
-    providers: [EventService],
+    imports: [MongooseModule.forFeature([
+        {name: 'Event', schema: EventSchema},
+        {name: 'Category', schema: CategorySchema},
+        {name: 'Tag', schema: TagSchema},
+    ])],
+    controllers: [EventController, TagController, CategoryController],
+    providers: [EventService, TagService, CategoryService],
 })
 export class EventModule {}

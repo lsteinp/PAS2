@@ -1,17 +1,13 @@
-import { CategorySchema } from './../schema/category.schema';
-
-import { TagModel } from './../models/tag.model';
-import { CategoryModel } from './../models/category.model';
-import { EventModel } from './../models/event.model';
+import { UserModel } from './models/user.model';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable, Body, Res } from '@nestjs/common';
 import { Model } from 'mongoose';
 
 @Injectable()
-export class EventService {
-    constructor(@InjectModel('Event') private readonly model: Model<EventModel>) { }
+export class UserService {
+    constructor(@InjectModel('User') private readonly model: Model<UserModel>) { }
 
-    async get(): Promise<EventModel[]> {
+    async get(): Promise<UserModel[]> {
         try {
             return await this.model.find().exec();
         } catch (e) {
@@ -19,7 +15,7 @@ export class EventService {
         }
     }
 
-    async create(model: EventModel): Promise<EventModel> {
+    async create(model: UserModel): Promise<UserModel> {
         try {
             const event = new this.model(model);
             return await event.save();
@@ -28,7 +24,11 @@ export class EventService {
         }
     }
 
-    async getEventDetail(id: string): Promise<EventModel> {
+    async findOneById(id: string): Promise<UserModel> {
         return await this.model.findOne({_id: id}).exec()
+    }
+        
+    async findOneByEmail(email: string): Promise<UserModel> {
+        return await this.model.findOne({email: email}).exec()
     }
 }
