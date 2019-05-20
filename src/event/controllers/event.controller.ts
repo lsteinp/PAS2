@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
 import { EventService } from './../services/event.service';
 import { EventModel } from './../models/event.model';
-import { Get, Controller, Post, Body, Res, Query, Param } from '@nestjs/common';
+import { Get, Controller, Post, Body, Res, Query, Param, Delete } from '@nestjs/common';
 import { EventSchema } from '../schema/event.Schema';
 import { async } from 'rxjs/internal/scheduler/async';
 
@@ -14,6 +14,16 @@ export class EventController {
         try {
             const event = await this.service.create(model);
             return res.status(200).json(event);
+        } catch (e) {
+            return res.status(500).json(e);
+        }
+    }
+
+    @Delete(':id')
+    async remove(@Param('id') id: string, @Res() res) {
+        try {
+            this.service.deleteEventByObjectId(id);
+            return res.status(200).json({message:'Evento deletado'})
         } catch (e) {
             return res.status(500).json(e);
         }
