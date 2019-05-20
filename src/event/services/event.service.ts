@@ -31,4 +31,10 @@ export class EventService {
     async getEventDetail(id: string): Promise<EventModel> {
         return await this.model.findOne({_id: id}).exec()
     }
+
+    async deleteEventByObjectId(id: string)  {
+        this.model.findOneAndDelete({_id: id}).exec().then(res => {
+            return
+        })
+    }
 }
