@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 var uniqueValidator = require('mongoose-unique-validator');
 
-const typeRole = ['Admin', 'User', 'Organizer'];
+const typeRole = ['Admin', 'User'];
 
 export const UserSchema = new mongoose.Schema({
     role: {

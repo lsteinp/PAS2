@@ -1,219 +1,445 @@
 {
 	"info": {
 		"name": "Hubble",
-		"_postman_id": "1af6f6fd-df8d-b84d-79b3-8655acb5933f",
+		"_postman_id": "f3493ba6-a32d-3d39-7215-75b95e6d1309",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Post User",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"firstName\": \"teste\",\n\t\"lastName\": \"teste\",\n\t\"email\": \"teste@teste.com\",\n\t\"password\": \"pass123\"\n}"
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/user",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"user"
-					]
+				{
+					"name": "Get User/email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/mail/Eventos@teste.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"mail",
+								"Eventos@teste.com"
+							]
+						},
+						"description": "Get user by email, passando o email como parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Favorited Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/events/favoritedEvents/5ce328a99944ed273e8c3318",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"events",
+								"favoritedEvents",
+								"5ce328a99944ed273e8c3318"
+							]
+						},
+						"description": "busca eventos favoritados pelo usuario passando o id do usuario como parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Created Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/events/createdEvents/5ce328a99944ed273e8c3318",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"events",
+								"createdEvents",
+								"5ce328a99944ed273e8c3318"
+							]
+						},
+						"description": "busca eventos criados pelo usuario passando o id do usuario como parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Participated Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/events/participatedEvents/5ce328a99944ed273e8c3318",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"events",
+								"participatedEvents",
+								"5ce328a99944ed273e8c3318"
+							]
+						},
+						"description": "busca eventos em que o usuario participou passando o id do usuario como parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User/id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/5ce328a99944ed273e8c3318",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"5ce328a99944ed273e8c3318"
+							]
+						},
+						"description": "busca um usuario pelo id, passando o id como parametro"
+					},
+					"response": []
+				},
+				{
+					"name": "Post User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"events\",\n\t\"lastName\": \"events\",\n\t\"email\": \"Eventos@teste.com\",\n\t\"password\": \"pass123\",\n\t\"createdEvents\": [\"5cd60499e0b1ce1c8aa64a70\", \"5ce30a26bfee0f15f2cd8f38\", \"5ce30a27bfee0f15f2cd8f3a\"],\n\t\"favoritedEvents\": [\"5cd60499e0b1ce1c8aa64a70\", \"5ce30a26bfee0f15f2cd8f38\", \"5ce30a27bfee0f15f2cd8f3a\"],\n\t\"participatedEvents\": [\"5cd60499e0b1ce1c8aa64a70\", \"5ce30a26bfee0f15f2cd8f38\", \"5ce30a27bfee0f15f2cd8f3a\"]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Post Event",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"type\": \"teste\",\n\t\"title\": \"teste\",\n\t\"description\": \"teste\",\n\t\"startDate\": \"23/02/2020 12:00\",\n\t\"endDate\": \"23/02/2020 12:00\",\n\t\"price\": \"23\",\n\t\"hours\": \"6\",\n\t\"address\": {\n\t\t\"street\": \"teste\",\n\t\t\"complements\": \"teste\",\n\t\t\"zipCode\": \"12312323\",\n\t\t\"district\": \"teste\",\n\t\t\"city\": \"teste\",\n\t\t\"state\": \"teste\"\n\t}\n}"
+			"name": "Event",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event"
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/event",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"event"
-					]
+				{
+					"name": "Get Event Rejeitado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/Rejeitado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"Rejeitado"
+							]
+						},
+						"description": "busca todos os eventos rejeitados"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Aprovado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/Aprovado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"Aprovado"
+							]
+						},
+						"description": "busca eventos aprovados"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Pendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/Pendente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"Pendente"
+							]
+						},
+						"description": "busca todos os eventos pendentes"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"teste\",\n\t\"title\": \"teste\",\n\t\"description\": \"teste\",\n\t\"startDate\": \"23/02/2020 12:00\",\n\t\"endDate\": \"23/02/2020 12:00\",\n\t\"price\": \"23\",\n\t\"hours\": \"6\",\n\t\"address\": {\n\t\t\"street\": \"teste\",\n\t\t\"complements\": \"teste\",\n\t\t\"zipCode\": \"12312323\",\n\t\t\"district\": \"teste\",\n\t\t\"city\": \"teste\",\n\t\t\"state\": \"teste\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"event"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/Event/5ce33603a9e1cf309d920c9e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"5ce33603a9e1cf309d920c9e"
+							]
+						},
+						"description": "deleta evento, passando o id"
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get User",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\": \"teste@teste.com\",\n    \"pass\": \"pass123\"\n}"
+			"name": "Category",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/user",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"user"
-					]
+				{
+					"name": "Post Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"title\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get Event",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
+			"name": "Tag",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tag"
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/Event",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"Event"
-					]
+				{
+					"name": "Post Tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"title\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tag"
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Tag",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:3000/tag",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"tag"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Category",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:3000/category",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"category"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post Tag",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"title\": \"title\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3000/tag",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"tag"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post Category",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"title\": \"title\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3000/category",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"category"
-					]
-				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "Login",
@@ -227,7 +453,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"teste@teste.com\",\n    \"pass\": \"pass123\"\n}"
+					"raw": "{\n    \"email\": \"Eventos@teste.com\",\n    \"pass\": \"pass123\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3000/auth/validate",
@@ -240,8 +466,7 @@
 						"auth",
 						"validate"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		}

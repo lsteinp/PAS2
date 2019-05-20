@@ -28,10 +28,41 @@ export class UserController {
     }
 
     @Get(':id')
-    async getUserEvents(@Param('id') id: string,@Res() res): Promise<UserModel>{
-        var user = await this.service.findOneById(id);
+    async getUser(@Param('id') id: string,@Res() res): Promise<UserModel>{
+        try{
+            var user = await this.service.findOneById(id);
+            return res.status(200).json(user);
+        }
+        catch(e){
+            return res.status(500).json(e);
+        }
+    }
 
-        return res.status(200).json(user);
+    @Get('events/:type/:id')
+    async getUserEvents(@Param('id') id: string,@Param('type') type: string,@Res() res): Promise<UserModel>{
+        try{
+            if(type == 'createdEvents' || type == 'favoritedEvents' || type == 'participatedEvents'){
+                var user = await this.service.findUserCreatedEvents(id, type);
+                return res.status(200).json(user);
+            }
+            else{
+                return res.status(500).json({message : 'Tipo de evento Inválido'})
+            }
+        }
+        catch(e){
+            return res.status(500).json(e);
+        }
+    }
+    
+    @Get('mail/:email')
+    async getUserEmail(@Param('email') email: string,@Res() res): Promise<UserModel>{
+        try{
+            var user = await this.service.findOneByEmail(email);
+            return res.status(200).json(user);
+        }
+        catch(e){
+            return res.status(500).json(e);
+        }
     }
   
 }
