@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "Hubble",
-		"_postman_id": "f3493ba6-a32d-3d39-7215-75b95e6d1309",
+		"_postman_id": "1af6f6fd-df8d-b84d-79b3-8655acb5933f",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -30,8 +30,7 @@
 					"path": [
 						"user"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -59,8 +58,7 @@
 					"path": [
 						"event"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -68,8 +66,16 @@
 			"name": "Get User",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"body": {},
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"teste@teste.com\",\n    \"pass\": \"pass123\"\n}"
+				},
 				"url": {
 					"raw": "http://localhost:3000/user",
 					"protocol": "http",
@@ -80,8 +86,7 @@
 					"path": [
 						"user"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -90,7 +95,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3000/Event",
 					"protocol": "http",
@@ -101,8 +109,7 @@
 					"path": [
 						"Event"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -111,7 +118,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3000/tag",
 					"protocol": "http",
@@ -122,8 +132,7 @@
 					"path": [
 						"tag"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -132,7 +141,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:3000/category",
 					"protocol": "http",
@@ -143,8 +155,7 @@
 					"path": [
 						"category"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -172,8 +183,7 @@
 					"path": [
 						"tag"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -200,6 +210,35 @@
 					"port": "3000",
 					"path": [
 						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"teste@teste.com\",\n    \"pass\": \"pass123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/validate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"validate"
 					]
 				},
 				"description": ""
