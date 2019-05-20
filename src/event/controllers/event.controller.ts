@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
 import { EventService } from './../services/event.service';
 import { EventModel } from './../models/event.model';
-import { Get, Controller, Post, Body, Res, Query, Param, Delete } from '@nestjs/common';
+import { Get, Controller, Post, Body, Res, Query, Param, Delete, Put } from '@nestjs/common';
 import { EventSchema } from '../schema/event.Schema';
 import { async } from 'rxjs/internal/scheduler/async';
 
@@ -16,6 +16,16 @@ export class EventController {
             return res.status(200).json(event);
         } catch (e) {
             return res.status(500).json(e);
+        }
+    }
+
+    @Put(':id')
+    async update(@Param('id') id: string, @Body() model: EventModel, @Res() res) {
+        try {
+            const event = await this.service.update(model, id);
+            return res.status(200).json(event);
+        } catch (e) {
+            return res.status(500).json({message: 'Objeto não encontrado'});
         }
     }
 
