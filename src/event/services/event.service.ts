@@ -40,6 +40,10 @@ export class EventService {
         return await this.model.findOne({_id: id}).exec()
     }
 
+    async getEventByStatus(status: string): Promise<EventModel> {
+        return await this.model.find({status: status});
+    }
+
     async deleteEventByObjectId(id: string)  {
         this.model.findOneAndDelete({_id: id}).exec().then(res => {
             return

@@ -55,4 +55,14 @@ export class EventController {
         var event = await this.service.getEventDetail(id);
         return res.status(200).json(event);
     }
+
+    @Get('status/:status')
+    async getEventByStatus(@Param('status') status: string, @Res() res): Promise<EventModel[]> {
+        if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
+            var events = await this.service.getEventByStatus(status);
+        }else{
+            return res.status(500).json({message : 'Status Inválido'})
+        }
+        return res.status(200).json(events);
+    }
 }
