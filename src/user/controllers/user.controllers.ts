@@ -41,8 +41,13 @@ export class UserController {
     @Get('events/:type/:id')
     async getUserEvents(@Param('id') id: string,@Param('type') type: string,@Res() res): Promise<UserModel>{
         try{
-            var user = await this.service.findUserCreatedEvents(id, type);
-            return res.status(200).json(user);
+            if(type == 'createdEvents' || type == 'favoritedEvents' || type == 'participatedEvents'){
+                var user = await this.service.findUserCreatedEvents(id, type);
+                return res.status(200).json(user);
+            }
+            else{
+                return res.status(500).json({message : 'Tipo de evento Inválido'})
+            }
         }
         catch(e){
             return res.status(500).json(e);
