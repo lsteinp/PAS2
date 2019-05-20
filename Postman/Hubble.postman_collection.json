@@ -205,6 +205,75 @@
 					"response": []
 				},
 				{
+					"name": "Get Event Rejeitado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/Rejeitado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"Rejeitado"
+							]
+						},
+						"description": "busca todos os eventos rejeitados"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Aprovado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/Aprovado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"Aprovado"
+							]
+						},
+						"description": "busca eventos aprovados"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Pendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/Pendente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"Pendente"
+							]
+						},
+						"description": "busca todos os eventos pendentes"
+					},
+					"response": []
+				},
+				{
 					"name": "Post Event",
 					"request": {
 						"method": "POST",
@@ -230,6 +299,31 @@
 							]
 						},
 						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/Event/5ce33603a9e1cf309d920c9e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"5ce33603a9e1cf309d920c9e"
+							]
+						},
+						"description": "deleta evento, passando o id"
 					},
 					"response": []
 				}
