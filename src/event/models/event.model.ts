@@ -1,7 +1,7 @@
 import { CategoryModel } from './category.model';
 import { TagModel } from './tag.model';
 export class EventModel {
-    public status: string[];
+    public status: string;
     public title: string;
     public description: string;
     public picture: string;
