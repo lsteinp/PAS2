@@ -65,4 +65,14 @@ export class EventController {
         }
         return res.status(200).json(events);
     }
+
+    @Put('status/:status/:id')
+    async updateStatus(@Param('status') status: string, @Param('id') id: string,@Body() model: EventModel, @Res() res) {
+        if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
+            model.status = status;
+            return this.update(id, model, res);
+        }else{
+            return res.status(500).json({message : 'Status Inválido'})
+        }
+    }
 }
