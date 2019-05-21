@@ -1,7 +1,8 @@
 import { UserModel } from './../models/user.model';
 import { UserService } from './../user.service';
-import { Model } from 'mongoose';
-import { Get, Controller, Post, Body, Res, Param, Put } from '@nestjs/common';
+import { Model, Types } from 'mongoose';
+import { Get, Controller, Post, Body, Res, Param } from '@nestjs/common';
+import { async } from 'rxjs/internal/scheduler/async';
 
 @Controller('user')
 export class UserController {
@@ -75,4 +76,5 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
+  
 }

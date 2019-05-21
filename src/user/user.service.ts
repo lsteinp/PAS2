@@ -1,8 +1,9 @@
 import { UserModel } from './models/user.model';
 import { InjectModel } from '@nestjs/mongoose';
-import { Injectable, Body, Res, HttpException, HttpStatus } from '@nestjs/common';
+import { Injectable, Body, Res } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 
+const mongoose = require('mongoose');
 @Injectable()
 export class UserService {
     constructor(@InjectModel('User') private readonly model: Model<UserModel>) { }
@@ -27,10 +28,25 @@ export class UserService {
     async findOneById(id: string): Promise<UserModel> {
         return await this.model.findOne({_id: id}).exec()
     }
-
+        
     async findOneByEmail(email: string): Promise<UserModel> {
         return await this.model.findOne({email: email}).exec()
     }
+
+    async updateFavoritar(idUser: string, idEvent: string): Promise<UserModel>{
+        var user =  await this.findOneById(idUser);
+        const convertido = Types.ObjectId(idEvent);
+         if(user.favoritedEvents.indexOf(convertido) > -1){
+           var index = user.favoritedEvents.indexOf(convertido);
+           user.favoritedEvents.splice(index);
+         }
+        else{
+            user.favoritedEvents.push(convertido);
+          }
+
+        await this.model.findOneAndUpdate(idUser, user).exec();
+        return user;
+   }
 
     async findUserCreatedEvents(id: string, type: string){
         var query =  await this.model.aggregate(
@@ -84,26 +100,9 @@ export class UserService {
             }
           ]
         ) 
-      if(query[0] == undefined){
-          return [];
-      }
+    if(query[0] == undefined){
+        return [];
+    }
       return query[0].type;        
-    }
-
-    async updateFavoritar(idUser: string, idEvent: string): Promise<UserModel>{
-      var user =  await this.findOneById(idUser);
-      const convertido = Types.ObjectId(idEvent);
-       if(user.favoritedEvents.indexOf(convertido) > -1){
-        var index = user.favoritedEvents.indexOf(convertido);
-        await user.favoritedEvents.splice(index);
-       }
-      else{
-        await user.favoritedEvents.push(convertido);
-        }
-        //return user;
-        await this.model.findOneAndUpdate(idUser, user).exec();
-        return user;
-    }
-    
+    } 
 }
-
