@@ -28,7 +28,6 @@ export class UserController {
     }
 
     @Get(':id')
-<<<<<<< 86e6db6ac7e478720a8ef77e65853a2f8fb763a8
     async getUser(@Param('id') id: string,@Res() res): Promise<UserModel>{
         try{
             var user = await this.service.findOneById(id);
@@ -64,19 +63,15 @@ export class UserController {
         catch(e){
             return res.status(500).json(e);
         }
-=======
-    async getUserEvents(@Param('id') id: string,@Res() res): Promise<UserModel>{
-        var user = await this.service.findOneById(id);
-        return res.status(200).json(user);
->>>>>>> update favoritar-eventos
     }
 
-    @Put(':id')
-    async update(@Res() res, @Param('id') id, @Body() user: UserModel): Promise<UserModel> {
-        try {
-            const users = await this.service.update(id, user);
-            return res.status(200).json(users);
-        } catch (e) {
+    @Post('favoritar/:id')
+    async updateFavoritar(@Res() res, @Param('id') idUser, @Body('idEvent') idEvent): Promise<UserModel>{
+        try{
+            var user = await this.service.updateFavoritar(idUser, idEvent);
+            return res.status(200).json(user);
+        }
+        catch(e){
             return res.status(500).json(e);
         }
     }
