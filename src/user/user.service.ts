@@ -2,6 +2,7 @@ import { UserModel } from './models/user.model';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable, Body, Res } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
+const crypto = require('crypto');
 
 const mongoose = require('mongoose');
 @Injectable()
@@ -18,6 +19,8 @@ export class UserService {
 
     async create(model: UserModel): Promise<UserModel> {
         try {
+            const hash = crypto.createHmac('sha256', model.password).update('The cake is a lie').digest('hex');
+            model.password = hash;
             const event = new this.model(model);
             return await event.save();
         }   catch  (e) {
