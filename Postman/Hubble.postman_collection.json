@@ -149,6 +149,37 @@
 					"response": []
 				},
 				{
+					"name": "Post Favoritar Evento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idEvent\": \"5ce30a27bfee0f15f2cd8f3a\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/favoritar/5ce46e63ae2a5a2590affad1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"favoritar",
+								"5ce46e63ae2a5a2590affad1"
+							]
+						},
+						"description": "rota para favoritar evento, passando id do usuario na url e id do evento no body"
+					},
+					"response": []
+				},
+				{
 					"name": "Post User",
 					"request": {
 						"method": "POST",

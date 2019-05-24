@@ -1,7 +1,8 @@
 import { UserModel } from './../models/user.model';
 import { UserService } from './../user.service';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { Get, Controller, Post, Body, Res, Param } from '@nestjs/common';
+import { async } from 'rxjs/internal/scheduler/async';
 
 @Controller('user')
 export class UserController {
@@ -58,6 +59,17 @@ export class UserController {
     async getUserEmail(@Param('email') email: string,@Res() res): Promise<UserModel>{
         try{
             var user = await this.service.findOneByEmail(email);
+            return res.status(200).json(user);
+        }
+        catch(e){
+            return res.status(500).json(e);
+        }
+    }
+
+    @Post('favoritar/:id')
+    async updateFavoritar(@Res() res, @Param('id') idUser, @Body('idEvent') idEvent): Promise<UserModel>{
+        try{
+            var user = await this.service.updateFavoritar(idUser, idEvent);
             return res.status(200).json(user);
         }
         catch(e){
