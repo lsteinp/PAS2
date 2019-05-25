@@ -23,4 +23,10 @@ export class TagService {
             return e;
         }
     }
+
+    async deleteTagByObjectId(id: string)  {
+        this.model.findOneAndDelete({_id: id}).exec().then(res => {
+            return
+        })
+    }
 }

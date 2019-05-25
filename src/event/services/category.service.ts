@@ -24,4 +24,10 @@ export class CategoryService {
             return e;
         }
     }
+
+    async deleteCategoryByObjectId(id: string)  {
+        this.model.findOneAndDelete({_id: id}).exec().then(res => {
+            return
+        })
+    }
 }

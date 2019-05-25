@@ -1,7 +1,9 @@
 import { UserModel } from './../models/user.model';
 import { UserService } from './../user.service';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { Get, Controller, Post, Body, Res, Param, Put } from '@nestjs/common';
+import { async } from 'rxjs/internal/scheduler/async';
+
 @Controller('user')
 export class UserController {
     constructor(private readonly service: UserService) { }
@@ -63,6 +65,8 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
+
+
     @Put('favoritar/:id')
     async updateFavoritar(@Res() res, @Param('id') idUser, @Body('idEvent') idEvent): Promise<UserModel>{
         console.log('kkkkkkk', idUser, 'kkkkkkk', idEvent);
@@ -84,4 +88,5 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
+
 }
