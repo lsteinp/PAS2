@@ -28,7 +28,25 @@ export class EventService {
         }
     }
 
+    async update(model: EventModel, id: string): Promise<EventModel> {
+        try {
+            return this.model.findOneAndUpdate({_id: id}, model, {new: true}).exec();
+        }   catch  (e) {
+            return e;
+        }
+    }
+
     async getEventDetail(id: string): Promise<EventModel> {
         return await this.model.findOne({_id: id}).exec()
+    }
+
+    async getEventByStatus(status: string): Promise<EventModel> {
+        return await this.model.find({status: status});
+    }
+
+    async deleteEventByObjectId(id: string)  {
+        this.model.findOneAndDelete({_id: id}).exec().then(res => {
+            return
+        })
     }
 }

@@ -5,6 +5,7 @@ import { UserService } from '../user/user.service';
 import { JwtPayload, AuthUser } from './interfaces/jwt-payload.interface';
 import { UserModel } from 'src/user/models/user.model';
 import { UserModule } from 'src/user/user.module';
+const crypto = require('crypto');
 
 @Injectable()
 export class AuthService {
@@ -24,6 +25,8 @@ export class AuthService {
   async validateUser(payload: JwtPayload): Promise<UserModel> {//Promise<AuthUser> {
 
     const user = await this.usersService.findOneByEmail(payload.email.trim());
+    const hash = crypto.createHmac('sha256', payload.pass).update('The cake is a lie').digest('hex');
+    payload.pass = hash;
     if(user.password.trim() == payload.pass.trim()){
       // var userPayload: AuthUser;
       // userPayload.token = this.jwtService.sign(user)

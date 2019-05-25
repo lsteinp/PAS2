@@ -1,7 +1,7 @@
 import { Model } from 'mongoose';
 import { EventService } from './../services/event.service';
 import { EventModel } from './../models/event.model';
-import { Get, Controller, Post, Body, Res, Query, Param } from '@nestjs/common';
+import { Get, Controller, Post, Body, Res, Query, Param, Delete, Put } from '@nestjs/common';
 import { EventSchema } from '../schema/event.Schema';
 import { async } from 'rxjs/internal/scheduler/async';
 
@@ -14,6 +14,26 @@ export class EventController {
         try {
             const event = await this.service.create(model);
             return res.status(200).json(event);
+        } catch (e) {
+            return res.status(500).json(e);
+        }
+    }
+
+    @Put(':id')
+    async update(@Param('id') id: string, @Body() model: EventModel, @Res() res) {
+        try {
+            const event = await this.service.update(model, id);
+            return res.status(200).json(event);
+        } catch (e) {
+            return res.status(500).json({message: 'Objeto não encontrado'});
+        }
+    }
+
+    @Delete(':id')
+    async remove(@Param('id') id: string, @Res() res) {
+        try {
+            this.service.deleteEventByObjectId(id);
+            return res.status(200).json({message:'Evento deletado'})
         } catch (e) {
             return res.status(500).json(e);
         }
@@ -34,5 +54,25 @@ export class EventController {
     async getEventDetail(@Param('id') id: string, @Res() res): Promise<EventModel> {
         var event = await this.service.getEventDetail(id);
         return res.status(200).json(event);
+    }
+
+    @Get('status/:status')
+    async getEventByStatus(@Param('status') status: string, @Res() res): Promise<EventModel[]> {
+        if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
+            var events = await this.service.getEventByStatus(status);
+        }else{
+            return res.status(500).json({message : 'Status Inválido'})
+        }
+        return res.status(200).json(events);
+    }
+
+    @Put('status/:status/:id')
+    async updateStatus(@Param('status') status: string, @Param('id') id: string,@Body() model: EventModel, @Res() res) {
+        if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
+            model.status = status;
+            return this.update(id, model, res);
+        }else{
+            return res.status(500).json({message : 'Status Inválido'})
+        }
     }
 }
