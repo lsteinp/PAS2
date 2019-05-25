@@ -1,7 +1,7 @@
 import { UserModel } from './../models/user.model';
 import { UserService } from './../user.service';
 import { Model, Types } from 'mongoose';
-import { Get, Controller, Post, Body, Res, Param } from '@nestjs/common';
+import { Get, Controller, Post, Body, Res, Param, Put } from '@nestjs/common';
 import { async } from 'rxjs/internal/scheduler/async';
 
 @Controller('user')
@@ -66,15 +66,27 @@ export class UserController {
         }
     }
 
-    @Post('favoritar/:id')
+
+    @Put('favoritar/:id')
     async updateFavoritar(@Res() res, @Param('id') idUser, @Body('idEvent') idEvent): Promise<UserModel>{
+        console.log('kkkkkkk', idUser, 'kkkkkkk', idEvent);
         try{
             var user = await this.service.updateFavoritar(idUser, idEvent);
             return res.status(200).json(user);
-        }
-        catch(e){
+        } catch (e) {
             return res.status(500).json(e);
         }
     }
-  
+
+    @Post('favoritado/:id')
+    async getEventFavorite(@Param('id') idUser: string, @Body('idEvent') idEvent, @Res() res): Promise<string> {
+        try {
+            var user = await this.service.getEventFavorite(idUser, idEvent);
+            console.log(user);
+            return res.status(200).json(user);
+        } catch (e) {
+            return res.status(500).json(e);
+        }
+    }
+
 }
