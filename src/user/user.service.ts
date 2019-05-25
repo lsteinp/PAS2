@@ -110,20 +110,6 @@ export class UserService {
       return query[0].type;        
     } 
 
-    async updateFavoritar(idUser: string, idEvent: string): Promise<UserModel>{
-      var user =  await this.findOneById(idUser);
-       const convertido = Types.ObjectId(idEvent);
-       if (user.favoritedEvents.indexOf(convertido) > -1) {
-        var index = user.favoritedEvents.indexOf(convertido);
-        await user.favoritedEvents.splice(index);
-       }
-      else {
-        await user.favoritedEvents.push(convertido);
-        }
-        //return user;
-        await this.model.findOneAndUpdate(idUser, user).exec();
-        return user;
-    }
     async getEventFavorite(idUser: string, idEvent: string): Promise<string> {
       var user =  await this.findOneById(idUser);
       const convertido = Types.ObjectId(idEvent);
