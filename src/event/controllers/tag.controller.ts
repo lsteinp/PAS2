@@ -31,7 +31,7 @@ export class TagController {
     async remove(@Param('id') id: string, @Res() res) {
         try {
             this.service.deleteTagByObjectId(id);
-            return res.status(200).json({message:'Categoria deletada'})
+            return res.status(200).json({message:'Tag deletada'})
         } catch (e) {
             return res.status(500).json(e);
         }
