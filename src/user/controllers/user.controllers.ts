@@ -89,4 +89,15 @@ export class UserController {
         }
     }
 
+    @Post('confirmar/:id')
+    async updateConfirmar(@Res() res, @Param('id') idUser, @Body('idEvent') idEvent): Promise<UserModel>{
+        try{
+            var user = await this.service.updateConfirmar(idUser, idEvent);
+            return res.status(200).json(user);
+        }
+        catch(e){
+            return res.status(500).json(e);
+        }
+    }
+  
 }

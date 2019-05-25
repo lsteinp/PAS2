@@ -52,6 +52,21 @@ export class UserService {
         return user;
    }
 
+   async updateConfirmar(idUser: string, idEvent: string): Promise<UserModel>{
+    var user =  await this.findOneById(idUser);
+    const convertido = Types.ObjectId(idEvent);
+     if(user.participatedEvents.indexOf(convertido) > -1){
+       var index = user.participatedEvents.indexOf(convertido);
+       user.participatedEvents.splice(index);
+     }
+    else{
+        user.participatedEvents.push(convertido);
+      }
+
+    await this.model.findOneAndUpdate(idUser, user).exec();
+    return user;
+}
+
     async findUserCreatedEvents(id: string, type: string){
         var query =  await this.model.aggregate(
           [
