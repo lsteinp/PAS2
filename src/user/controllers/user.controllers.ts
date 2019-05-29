@@ -42,9 +42,32 @@ export class UserController {
     @Get('events/:type/:id')
     async getUserEvents(@Param('id') id: string,@Param('type') type: string,@Res() res): Promise<UserModel>{
         try{
-            if(type == 'createdEvents' || type == 'favoritedEvents' || type == 'participatedEvents'){
+            if(type == 'createdEvents' || type == 'favoritedEvents') {
                 var user = await this.service.findUserCreatedEvents(id, type);
                 return res.status(200).json(user);
+            }
+            else if(type == 'participatedEvents'){
+                var fui = await this.service.findUserCreatedEvents(id, type);
+                var vou = fui.slice(0);
+                var agora = await Date.now();
+                for(let i = 0; i < fui.length; i++){
+                    console.log(i);
+                    let converted = await this.toDate(fui[i].startDate);
+                    if(converted >  agora){
+                        console.log('euFui :D');
+                        vou.pop(i);
+                    }
+                    else{
+                        console.log('Nao euFui :D');
+                        fui.pop(i);
+                        i--;
+                    }
+                }
+                var eventos = {
+                    euFui: fui,
+                    euVou: vou,
+                };
+                return res.status(200).json(eventos);
             }
             else{
                 return res.status(500).json({message : 'Tipo de evento Inválido'})
@@ -100,4 +123,20 @@ export class UserController {
         }
     }
   
+    toDate(string){
+        var dateString = string;
+        var dataSplit =  dateString.split('/');
+        var dateConverted;
+    
+        if (dataSplit[2].split(" ").length > 1) {
+    
+            var hora = dataSplit[2].split(" ")[1].split(':');
+            dataSplit[2] = dataSplit[2].split(" ")[0];
+            dateConverted = new Date(dataSplit[2], dataSplit[1]-1, dataSplit[0], hora[0], hora[1]);
+    
+        } else {
+            dateConverted = new Date(dataSplit[2], dataSplit[1] - 1, dataSplit[0]).getTime();
+        }
+        return dateConverted;
+    }
 }
