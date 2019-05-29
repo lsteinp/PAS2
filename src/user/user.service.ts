@@ -5,7 +5,6 @@ import { Injectable, Body, Res } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 const crypto = require('crypto');
 
-const mongoose = require('mongoose');
 @Injectable()
 export class UserService {
     constructor(@InjectModel('User') private readonly model: Model<UserModel>) { }
@@ -48,7 +47,7 @@ export class UserService {
             user.favoritedEvents.push(convertido);
           }
 
-        await this.model.findOneAndUpdate(idUser, user).exec();
+        await this.model.findOneAndUpdate({_id: idUser}, user).exec();
         return user;
    }
 
@@ -63,9 +62,24 @@ export class UserService {
         user.participatedEvents.push(convertido);
       }
 
-    await this.model.findOneAndUpdate(idUser, user).exec();
+    await this.model.findOneAndUpdate({_id: idUser}, user).exec();
     return user;
-}
+  }
+
+  async updateCriar(idUser: string, idEvent: string): Promise<UserModel>{
+    var user =  await this.findOneById(idUser);
+    const convertido = Types.ObjectId(idEvent);
+     if(user.createdEvents.indexOf(convertido) > -1){
+       var index = user.createdEvents.indexOf(convertido);
+       user.createdEvents.splice(index);
+     }
+    else{
+        user.createdEvents.push(convertido);
+      }
+
+    await this.model.findOneAndUpdate({_id: idUser}, user).exec();
+    return user;
+  }
 
     async findUserCreatedEvents(id: string, type: string){
         var query =  await this.model.aggregate(
