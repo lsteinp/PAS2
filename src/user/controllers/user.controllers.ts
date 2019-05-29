@@ -47,7 +47,6 @@ export class UserController {
                 return res.status(200).json(user);
             }
             else if(type == 'participatedEvents'){
-                const type = 'participatedEvents';
                 var fui = await this.service.findUserCreatedEvents(id, type);
                 var vou = fui.slice(0);
                 var agora = await Date.now();
