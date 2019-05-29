@@ -1,3 +1,4 @@
+import { EventModel } from './../event/models/event.model';
 import { UserModel } from './models/user.model';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable, Body, Res } from '@nestjs/common';
@@ -31,7 +32,7 @@ export class UserService {
     async findOneById(id: string): Promise<UserModel> {
         return await this.model.findOne({_id: id}).exec()
     }
-        
+
     async findOneByEmail(email: string): Promise<UserModel> {
         return await this.model.findOne({email: email}).exec()
     }
@@ -118,9 +119,19 @@ export class UserService {
             }
           ]
         ) 
-    if(query[0] == undefined){
-        return [];
+    if ( query[0] == undefined ) {
+         return [];
     }
       return query[0].type;        
     } 
+
+    async getEventFavorite(idUser: string, idEvent: string): Promise<string> {
+      var user =  await this.findOneById(idUser);
+      const convertido = Types.ObjectId(idEvent);
+      if (user.favoritedEvents.indexOf(convertido) > -1) {
+       return idEvent;
+      } else {
+       return null;
+    }
+}
 }
