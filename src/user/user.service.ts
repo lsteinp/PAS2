@@ -51,6 +51,21 @@ export class UserService {
         return user;
    }
 
+   async updateCategorias(idUser: string, idCategoria: string): Promise<UserModel>{
+    var user =  await this.findOneById(idUser);
+    const convertido = Types.ObjectId(idCategoria);
+     if(user.interestCategories.indexOf(convertido) > -1){
+       var index = user.interestCategories.indexOf(convertido);
+       user.interestCategories.splice(index);
+     }
+    else{
+        user.interestCategories.push(convertido);
+      }
+
+    await this.model.findOneAndUpdate({_id: idUser}, user).exec();
+    return user;
+}
+
    async updateConfirmar(idUser: string, idEvent: string): Promise<UserModel>{
     var user =  await this.findOneById(idUser);
     const convertido = Types.ObjectId(idEvent);

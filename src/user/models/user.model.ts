@@ -7,6 +7,7 @@ export class UserModel{
         public email: string,
         public password: string,
         public role: string,
+        public interestCategories: string[],
         public favoritedEvents: EventModel[],
         public participatedEvents: EventModel[],
         public createdEvents: EventModel[],

@@ -111,6 +111,17 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
+
+    @Post('updateCategoria/:idUser')
+    async updateCategoria(@Param('idUser') idUser: string, @Body('idCategoria') idCategoria, @Res() res): Promise<string> {
+        try {
+            var user = await this.service.updateCategorias(idUser, idCategoria);
+            console.log(user);
+            return res.status(200).json(user);
+        } catch (e) {
+            return res.status(500).json(e);
+        }
+    }
     
 
     @Post('confirmar/:id')
