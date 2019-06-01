@@ -93,25 +93,26 @@ export class UserService {
 
     async updateFavoritar(idUser: string, idEvent: string): Promise<UserModel>{
       var user =  await this.findOneById(idUser);
-       const convertido = Types.ObjectId(idEvent);
-       if (user.favoritedEvents.indexOf(convertido) > -1) {
-        var index = user.favoritedEvents.indexOf(convertido);
-        await user.favoritedEvents.splice(index);
+      const convertido = Types.ObjectId(idEvent);
+       if(user.favoritedEvents.indexOf(convertido) > -1){
+         var index = user.favoritedEvents.indexOf(convertido);
+         user.favoritedEvents.splice(index);
        }
-      else {
-        await user.favoritedEvents.push(convertido);
+      else{
+          user.favoritedEvents.push(convertido);
         }
-        //return user;
-        await this.model.findOneAndUpdate(idUser, user).exec();
-        return user;
-    }
-    async getEventFavorite(idUser: string, idEvent: string): Promise<string> {
+
+      await this.model.findOneAndUpdate({_id: idUser}, user).exec();
+      return user;
+ }
+
+    async getEventFavorite(idUser: string, idEvent: string): Promise<boolean> {
       var user =  await this.findOneById(idUser);
       const convertido = Types.ObjectId(idEvent);
       if (user.favoritedEvents.indexOf(convertido) > -1) {
-       return idEvent;
+       return true;
       } else {
-       return null;
+       return false;
     }
 }
 }

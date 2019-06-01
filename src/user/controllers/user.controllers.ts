@@ -75,7 +75,7 @@ export class UserController {
     }
 
     @Post('favoritado/:id')
-    async getEventFavorite(@Param('id') idUser: string, @Body('idEvent') idEvent, @Res() res): Promise<string> {
+    async getEventFavorite(@Param('id') idUser: string, @Body('idEvent') idEvent, @Res() res): Promise<boolean> {
         try {
             var user = await this.service.getEventFavorite(idUser, idEvent);
             console.log(user);
