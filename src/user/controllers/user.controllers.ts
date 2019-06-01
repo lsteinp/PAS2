@@ -3,6 +3,7 @@ import { UserService } from './../user.service';
 import { Model, Types } from 'mongoose';
 import { Get, Controller, Post, Body, Res, Param, Put } from '@nestjs/common';
 import { async } from 'rxjs/internal/scheduler/async';
+import { CategorySchema } from 'src/event/schema/category.schema';
 
 @Controller('user')
 export class UserController {
@@ -39,26 +40,23 @@ export class UserController {
         }
     }
 
-    @Get('events/:type/:id')
-    async getUserEvents(@Param('id') id: string,@Param('type') type: string,@Res() res): Promise<UserModel>{
+    @Get(':schema/:type/:id')
+    async getUserEvents(@Param('id') id: string,@Param('type') type: string,@Param('schema') schema: string,@Res() res): Promise<UserModel>{
         try{
-            if(type == 'createdEvents' || type == 'favoritedEvents') {
-                var user = await this.service.findUserCreatedEvents(id, type);
+            if(type == 'createdEvents' || type == 'favoritedEvents' || type == 'interestCategories') {
+                var user = await this.service.findUserCreatedEvents(id, type, schema);
                 return res.status(200).json(user);
             }
             else if(type == 'participatedEvents'){
-                var fui = await this.service.findUserCreatedEvents(id, type);
+                var fui = await this.service.findUserCreatedEvents(id, type, schema);
                 var vou = fui.slice(0);
                 var agora = await Date.now();
                 for(let i = 0; i < fui.length; i++){
-                    console.log(i);
                     let converted = await this.toDate(fui[i].startDate);
                     if(converted >  agora){
-                        console.log('euFui :D');
                         vou.pop(i);
                     }
                     else{
-                        console.log('Nao euFui :D');
                         fui.pop(i);
                         i--;
                     }
