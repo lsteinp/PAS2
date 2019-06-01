@@ -96,7 +96,7 @@ export class UserService {
     return user;
   }
 
-    async findUserCreatedEvents(id: string, type: string){
+    async findUserCreatedEvents(id: string, type: string, schema:string){
         var query =  await this.model.aggregate(
           [
             {
@@ -110,7 +110,7 @@ export class UserService {
               }
             }, {
               '$lookup': {
-                'from': 'events', 
+                'from': schema, 
                 'localField': type, 
                 'foreignField': '_id', 
                 'as': 'events_doc'
