@@ -6,7 +6,9 @@ export class EventModel {
     public description: string;
     public picture: string;
     public startDate: string;
+    public startHour: string;
     public endDate: string;
+    public endHour: string;
     public price: number;
     public hours: string;
     public observations: string;
@@ -17,6 +19,7 @@ export class EventModel {
          district: string;
          city: string;
          state: string;
+         number: number;
      };
      public category: CategoryModel;
      public tag: TagModel;
