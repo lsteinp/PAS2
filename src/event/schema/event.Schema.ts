@@ -47,6 +47,7 @@ export const EventSchema = new mongoose.Schema({
     },
     endDate: {
         type: String,
+        default: Date.now,
         required: true,
     },
     endHour: {
