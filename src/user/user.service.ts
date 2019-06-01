@@ -1,10 +1,10 @@
+import { EventModel } from './../event/models/event.model';
 import { UserModel } from './models/user.model';
 import { InjectModel } from '@nestjs/mongoose';
 import { Injectable, Body, Res } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 const crypto = require('crypto');
 
-const mongoose = require('mongoose');
 @Injectable()
 export class UserService {
     constructor(@InjectModel('User') private readonly model: Model<UserModel>) { }
@@ -31,7 +31,7 @@ export class UserService {
     async findOneById(id: string): Promise<UserModel> {
         return await this.model.findOne({_id: id}).exec()
     }
-        
+
     async findOneByEmail(email: string): Promise<UserModel> {
         return await this.model.findOne({email: email}).exec()
     }
@@ -47,11 +47,56 @@ export class UserService {
             user.favoritedEvents.push(convertido);
           }
 
-        await this.model.findOneAndUpdate(idUser, user).exec();
+        await this.model.findOneAndUpdate({_id: idUser}, user).exec();
         return user;
    }
 
-    async findUserCreatedEvents(id: string, type: string){
+   async updateCategorias(idUser: string, idCategoria: string): Promise<UserModel>{
+    var user =  await this.findOneById(idUser);
+    const convertido = Types.ObjectId(idCategoria);
+     if(user.interestCategories.indexOf(convertido) > -1){
+       var index = user.interestCategories.indexOf(convertido);
+       user.interestCategories.splice(index);
+     }
+    else{
+        user.interestCategories.push(convertido);
+      }
+
+    await this.model.findOneAndUpdate({_id: idUser}, user).exec();
+    return user;
+}
+
+   async updateConfirmar(idUser: string, idEvent: string): Promise<UserModel>{
+    var user =  await this.findOneById(idUser);
+    const convertido = Types.ObjectId(idEvent);
+     if(user.participatedEvents.indexOf(convertido) > -1){
+       var index = user.participatedEvents.indexOf(convertido);
+       user.participatedEvents.splice(index);
+     }
+    else{
+        user.participatedEvents.push(convertido);
+      }
+
+    await this.model.findOneAndUpdate({_id: idUser}, user).exec();
+    return user;
+  }
+
+  async updateCriar(idUser: string, idEvent: string): Promise<UserModel>{
+    var user =  await this.findOneById(idUser);
+    const convertido = Types.ObjectId(idEvent);
+     if(user.createdEvents.indexOf(convertido) > -1){
+       var index = user.createdEvents.indexOf(convertido);
+       user.createdEvents.splice(index);
+     }
+    else{
+        user.createdEvents.push(convertido);
+      }
+
+    await this.model.findOneAndUpdate({_id: idUser}, user).exec();
+    return user;
+  }
+
+    async findUserCreatedEvents(id: string, type: string, schema:string){
         var query =  await this.model.aggregate(
           [
             {
@@ -65,7 +110,7 @@ export class UserService {
               }
             }, {
               '$lookup': {
-                'from': 'events', 
+                'from': schema, 
                 'localField': type, 
                 'foreignField': '_id', 
                 'as': 'events_doc'
@@ -103,9 +148,21 @@ export class UserService {
             }
           ]
         ) 
-    if(query[0] == undefined){
-        return [];
+    if ( query[0] == undefined ) {
+         return [];
     }
       return query[0].type;        
     } 
+
+    
+
+    async getEventFavorite(idUser: string, idEvent: string): Promise<boolean> {
+      var user =  await this.findOneById(idUser);
+      const convertido = Types.ObjectId(idEvent);
+      if (user.favoritedEvents.indexOf(convertido) > -1) {
+       return true;
+      } else {
+       return false;
+    }
+}
 }
