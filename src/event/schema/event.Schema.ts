@@ -6,7 +6,7 @@ export const EventSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: typeStatus,
-        default: typeStatus[0],
+        default: typeStatus[2],
         required: true,
     },
     title: {
