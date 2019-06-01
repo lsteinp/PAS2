@@ -41,9 +41,16 @@ export const EventSchema = new mongoose.Schema({
         default: Date.now,
         required: true,
     },
+    startHour: {
+        type: String,
+        required: true,
+    },
     endDate: {
         type: String,
-        default: Date.now,
+        required: true,
+    },
+    endHour: {
+        type: String,
         required: true,
     },
     price: {
@@ -79,6 +86,10 @@ export const EventSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
+        number: {
+            type: Number,
+            required: true,
+        }
     },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
