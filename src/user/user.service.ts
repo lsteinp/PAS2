@@ -154,7 +154,15 @@ export class UserService {
       return query[0].type;        
     } 
 
-    
+    async getEventConfir(idUser: string, idEvent: string): Promise<boolean> {
+      var user =  await this.findOneById(idUser);
+      const convertido = Types.ObjectId(idEvent);
+      if (user.participatedEvents.indexOf(convertido) > -1) {
+       return true;
+      } else {
+       return false;
+      }  
+    }
 
     async getEventFavorite(idUser: string, idEvent: string): Promise<boolean> {
       var user =  await this.findOneById(idUser);
