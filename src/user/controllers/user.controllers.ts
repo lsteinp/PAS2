@@ -120,7 +120,17 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
-    
+
+    @Post('confirmado/:id')
+    async getEventConfirm(@Param('id') idUser: string, @Body('idEvent') idEvent, @Res() res): Promise<boolean> {
+        try {
+            var user = await this.service.getEventConfir(idUser, idEvent);
+            console.log(user);
+            return res.status(200).json(user);
+        } catch (e) {
+            return res.status(500).json(e);
+        }
+    }
 
     @Post('confirmar/:id')
     async updateConfirmar(@Res() res, @Param('id') idUser, @Body('idEvent') idEvent): Promise<UserModel>{
