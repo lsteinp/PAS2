@@ -90,7 +90,6 @@ export class UserController {
 
     @Put('favoritar/:id')
     async updateFavoritar(@Res() res, @Param('id') idUser, @Body('idEvent') idEvent): Promise<UserModel>{
-        console.log('kkkkkkk', idUser, 'kkkkkkk', idEvent);
         try{
             var user = await this.service.updateFavoritar(idUser, idEvent);
             return res.status(200).json(user);
@@ -103,7 +102,6 @@ export class UserController {
     async getEventFavorite(@Param('id') idUser: string, @Body('idEvent') idEvent, @Res() res): Promise<boolean> {
         try {
             var user = await this.service.getEventFavorite(idUser, idEvent);
-            console.log(user);
             return res.status(200).json(user);
         } catch (e) {
             return res.status(500).json(e);
@@ -114,7 +112,6 @@ export class UserController {
     async updateCategoria(@Param('idUser') idUser: string, @Body('idCategoria') idCategoria, @Res() res): Promise<string> {
         try {
             var user = await this.service.updateCategorias(idUser, idCategoria);
-            console.log(user);
             return res.status(200).json(user);
         } catch (e) {
             return res.status(500).json(e);
@@ -125,7 +122,6 @@ export class UserController {
     async getEventConfirm(@Param('id') idUser: string, @Body('idEvent') idEvent, @Res() res): Promise<boolean> {
         try {
             var user = await this.service.getEventConfir(idUser, idEvent);
-            console.log(user);
             return res.status(200).json(user);
         } catch (e) {
             return res.status(500).json(e);
