@@ -10,22 +10,14 @@ export class UserService {
     constructor(@InjectModel('User') private readonly model: Model<UserModel>) { }
 
     async get(): Promise<UserModel[]> {
-        try {
             return await this.model.find().exec();
-        } catch (e) {
-            return e;
-        }
     }
 
     async create(model: UserModel): Promise<UserModel> {
-        try {
-            const hash = crypto.createHmac('sha256', model.password).update('The cake is a lie').digest('hex');
-            model.password = hash;
-            const event = new this.model(model);
-            return await event.save();
-        }   catch  (e) {
-            return e;
-        }
+        const hash = crypto.createHmac('sha256', model.password).update('The cake is a lie').digest('hex');
+        model.password = hash;
+        const event = new this.model(model);
+        return await event.save();
     }
 
     async findOneById(id: string): Promise<UserModel> {
@@ -149,7 +141,7 @@ export class UserService {
           ]
         ) 
     if ( query[0] == undefined ) {
-         return [];
+         return 'query falhou';
     }
       return query[0].type;        
     } 

@@ -133,7 +133,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/categories/interestCategories/5cf1d44c221c1e1be1c911d5",
+							"raw": "http://localhost:3000/user/categories/interestCategories/5cf589c4a7f9ea205fb4c179",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -143,7 +143,7 @@
 								"user",
 								"categories",
 								"interestCategories",
-								"5cf1d44c221c1e1be1c911d5"
+								"5cf589c4a7f9ea205fb4c179"
 							]
 						},
 						"description": "get user intereste categories do usuario, passando schema, tipo e id do usario"
@@ -157,7 +157,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/5ce328a99944ed273e8c3318",
+							"raw": "http://localhost:3000/user/5cf589c4a7f9ea205fb4c179",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -165,7 +165,7 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"5ce328a99944ed273e8c3318"
+								"5cf589c4a7f9ea205fb4c179"
 							]
 						},
 						"description": "busca um usuario pelo id, passando o id como parametro"
@@ -173,9 +173,9 @@
 					"response": []
 				},
 				{
-					"name": "Post Favoritar Evento",
+					"name": "Put Favoritar Evento",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -215,7 +215,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstName\": \"events\",\n\t\"lastName\": \"events\",\n\t\"email\": \"Eventos@teste.com\",\n\t\"password\": \"pass123\",\n\t\"createdEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"favoritedEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"participatedEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"interestCategories\": [\"5cf1d2dc221c1e1be1c911d3\",\"5cf1d2dd221c1e1be1c911d4\"]\n}"
+							"raw": "{\n\t\"firstName\": \"events\",\n\t\"lastName\": \"events\",\n\t\"email\": \"Eventooooooooos@teste.com\",\n\t\"password\": \"pass123\",\n\t\"createdEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"favoritedEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"participatedEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"interestCategories\": [\"5cf1d2dc221c1e1be1c911d3\",\"5cf1d2dd221c1e1be1c911d4\"],\n\t\"role\": \"Admin\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/user",
@@ -267,13 +267,18 @@
 					"name": "Post Confirmado",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"idEvent\": \"5ce338891221fd32483d8072\"\n}"
+							"raw": "{\n\t\"idEvent\": \"5cf1d246221c1e1be1c911d1\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/confirmado/5cef147a4bdec0345b588fa7",
+							"raw": "http://localhost:3000/user/confirmado/5cf1d44c221c1e1be1c911d5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -282,10 +287,64 @@
 							"path": [
 								"user",
 								"confirmado",
-								"5cef147a4bdec0345b588fa7"
+								"5cf1d44c221c1e1be1c911d5"
 							]
 						},
 						"description": "Verifica se usuario ja confirmou presenca no evento"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Favoritado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/favoritado/5cf1d44c221c1e1be1c911d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"favoritado",
+								"5cf1d44c221c1e1be1c911d5"
+							]
+						},
+						"description": "Valida se evento foi favoritado pelo usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Update Categoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idCategoria\": \"5cf1d2dc221c1e1be1c911d3\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/updateCategoria/5cf1d44c221c1e1be1c911d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"updateCategoria",
+								"5cf1d44c221c1e1be1c911d5"
+							]
+						},
+						"description": ""
 					},
 					"response": []
 				}

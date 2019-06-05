@@ -12,28 +12,17 @@ export class EventService {
     constructor(@InjectModel('Event') private readonly model: Model<EventModel>) { }
 
     async get(): Promise<EventModel[]> {
-        try {
-            return await this.model.find().exec();
-        } catch (e) {
-            return e;
-        }
+        return await this.model.find().exec();
     }
 
     async create(model: EventModel): Promise<EventModel> {
-        try {
-            const event = new this.model(model);
-            return await event.save();
-        }   catch  (e) {
-            return e;
-        }
+        
+        const event = new this.model(model);
+        return await event.save();
     }
 
     async update(model: EventModel, id: string): Promise<EventModel> {
-        try {
             return this.model.findOneAndUpdate({_id: id}, model, {new: true}).exec();
-        }   catch  (e) {
-            return e;
-        }
     }
 
     async getEventDetail(id: string): Promise<EventModel> {
