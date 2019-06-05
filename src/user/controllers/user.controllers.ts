@@ -51,15 +51,15 @@ export class UserController {
                 var fui = await this.service.findUserCreatedEvents(id, type, schema);
                 var vou = fui.slice(0);
                 var agora = await Date.now();
-                for(let i = 0; i < fui.length; i++){
+                for(let i = 0; i < fui.length;){
                     let converted = await this.toDate(fui[i].startDate);
                     if(converted >  agora){
                         vou.pop(i);
                     }
                     else{
                         fui.pop(i);
-                        i--;
                     }
+                    i++;
                 }
                 var eventos = {
                     euFui: fui,
