@@ -43,7 +43,6 @@ export class EventController {
     async get(@Res() res): Promise<EventModel[]> {
         try {
             const events = await this.service.get();
-            console.log(JSON.stringify(events));
             return res.status(200).json(events);
         } catch (e) {
             return res.status(500).json(e);
@@ -52,27 +51,42 @@ export class EventController {
 
     @Get(':id')
     async getEventDetail(@Param('id') id: string, @Res() res): Promise<EventModel> {
-        var event = await this.service.getEventDetail(id);
-        return res.status(200).json(event);
+        try{
+            var event = await this.service.getEventDetail(id);
+            return res.status(200).json(event);
+        }
+        catch (e){
+            return res.status(500).json(e);
+        }
     }
 
     @Get('status/:status')
     async getEventByStatus(@Param('status') status: string, @Res() res): Promise<EventModel[]> {
-        if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
-            var events = await this.service.getEventByStatus(status);
-        }else{
-            return res.status(500).json({message : 'Status Inválido'})
+        try{
+            if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
+                var events = await this.service.getEventByStatus(status);
+            }else{
+                return res.status(500).json({message : 'Status Inválido'})
+            }
+            return res.status(200).json(events);
         }
-        return res.status(200).json(events);
+        catch (e){
+            return res.status(500).json(e);
+        }
     }
 
     @Put('status/:status/:id')
     async updateStatus(@Param('status') status: string, @Param('id') id: string,@Body() model: EventModel, @Res() res) {
-        if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
-            model.status = status;
-            return this.update(id, model, res);
-        }else{
-            return res.status(500).json({message : 'Status Inválido'})
+        try{
+            if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
+                model.status = status;
+                return this.update(id, model, res);
+            }else{
+                return res.status(500).json({message : 'Status Inválido'})
+            }
+        }
+        catch (e){
+            return res.status(500).json(e);
         }
     }
 }
