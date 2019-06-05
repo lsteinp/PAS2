@@ -15,28 +15,15 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async signIn(): Promise<string> {
-    // In the real-world app you shouldn't expose this method publicly
-    // instead, return a token once you verify user credentials
-    const user: JwtPayload = { email: 'user@email.com', pass: 'senha' };
-    return this.jwtService.sign(user);
-  }
-
-  async validateUser(payload: JwtPayload): Promise<UserModel> {//Promise<AuthUser> {
-
+  async validateUser(payload: JwtPayload): Promise<UserModel> {
     const user = await this.usersService.findOneByEmail(payload.email.trim());
     const hash = crypto.createHmac('sha256', payload.pass).update('The cake is a lie').digest('hex');
     payload.pass = hash;
     if(user.password.trim() == payload.pass.trim()){
-      // var userPayload: AuthUser;
-      // userPayload.token = this.jwtService.sign(user)
-      // userPayload.user = user;
-      // return userPayload;
       return user;  
     }
     else{
       return null;
     }
-    //return await this.usersService.findOneByEmail(payload.email);
   }
 }

@@ -10,21 +10,15 @@ export class AuthController {
   constructor(private readonly authService: AuthService,
              private readonly service: UserService) {}
 
-//   @Get('token')
-//   async createToken(): Promise<any> {
-//     return await this.authService.createToken();
-//   }
-
-  @Post('signin')
-  async signin(){
-    return await this.authService.signIn()
-  }
   @Post('validate')
-  //@UseGuards(AuthGuard())
-  async validate(@Body() payload: JwtPayload,@Res() res): Promise<UserModel>{//Promise<AuthUser> {
+  async validate(@Body() payload: JwtPayload,@Res() res): Promise<UserModel>{
       try {
           const user = await this.authService.validateUser(payload);
+          if(user === null){
+              return res.states(500).json({message: 'Email ou senha inválidos'});
+          }
           return res.status(200).json(user);
+          
       } catch (e) {
           return res.status(500).json(e);
       }
