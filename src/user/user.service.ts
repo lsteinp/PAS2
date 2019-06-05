@@ -141,7 +141,7 @@ export class UserService {
           ]
         ) 
     if ( query[0] == undefined ) {
-         return 'query falhou';
+         return [];
     }
       return query[0].type;        
     } 
