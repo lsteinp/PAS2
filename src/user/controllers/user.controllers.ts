@@ -55,11 +55,9 @@ export class UserController {
                 for(let i = 0; i < events.length; i++){
                     let converted = await this.toDate(events[i].startDate);
                     if(converted >  agora){
-                        console.log('vou');
                         vou.push(events[i]);
                     }
                     else{
-                        console.log('fui');
                         fui.push(events[i]);
                     }
                 }
@@ -67,8 +65,6 @@ export class UserController {
                     euFui: fui,
                     euVou: vou,
                 };
-                console.log(fui);
-                console.log(vou);
                 return res.status(200).json(eventos);
             }
             else{
