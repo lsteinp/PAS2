@@ -48,18 +48,18 @@ export class UserController {
                 return res.status(200).json(user);
             }
             else if(type == 'participatedEvents'){
-                var fui = await this.service.findUserCreatedEvents(id, type, schema);
-                var vou = fui.slice(0);
+                var events = await this.service.findUserCreatedEvents(id, type, schema);
+                var fui = Array();
+                var vou = Array();
                 var agora = await Date.now();
-                for(let i = 0; i < fui.length;){
-                    let converted = await this.toDate(fui[i].startDate);
+                for(let i = 0; i < events.length; i++){
+                    let converted = await this.toDate(events[i].startDate);
                     if(converted >  agora){
-                        vou.pop(i);
+                        vou.push(events[i]);
                     }
                     else{
-                        fui.pop(i);
+                        fui.push(events[i]);
                     }
-                    i++;
                 }
                 var eventos = {
                     euFui: fui,

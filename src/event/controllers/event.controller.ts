@@ -63,8 +63,8 @@ export class EventController {
     @Get('status/:status')
     async getEventByStatus(@Param('status') status: string, @Res() res): Promise<EventModel[]> {
         try{
-            if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
-                var events = await this.service.getEventByStatus(status);
+            if(status == "aprovado" || status == "rejeitado" || status == "pendente"){
+                var events = await this.service.getEventByStatus(status.substr(0, 1).toUpperCase() + status.substr(1).toLowerCase());
             }else{
                 return res.status(500).json({message : 'Status Inválido'})
             }
@@ -78,7 +78,7 @@ export class EventController {
     @Put('status/:status/:id')
     async updateStatus(@Param('status') status: string, @Param('id') id: string,@Body() model: EventModel, @Res() res) {
         try{
-            if(status == "Aprovado" || status == "Rejeitado" || status == "Pendente"){
+            if(status == "aprovado" || status == "rejeitado" || status == "pendente"){
                 model.status = status;
                 return this.update(id, model, res);
             }else{
