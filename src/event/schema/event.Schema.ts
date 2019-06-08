@@ -95,7 +95,7 @@ export const EventSchema = new mongoose.Schema({
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        require: false,
+        require: true,
     },
     approvedBy: {
         type: mongoose.Schema.Types.ObjectId,
