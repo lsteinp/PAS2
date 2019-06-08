@@ -21,7 +21,7 @@ export class EventService {
     }
 
     async update(model: EventModel, id: string): Promise<EventModel> {
-        return this.model.findOneAndUpdate({ _id: id }, model, { new: true }).exec();
+        return await this.model.findOneAndUpdate({ _id: id }, model,{new: true}).exec();
     }
 
     async getEventDetail(id: string) {

@@ -22,6 +22,7 @@ export class EventController {
     @Put(':id')
     async update(@Param('id') id: string, @Body() model: EventModel, @Res() res) {
         try {
+            model.status = 'pendente';
             const event = await this.service.update(model, id);
             return res.status(200).json(event);
         } catch (e) {
@@ -42,7 +43,7 @@ export class EventController {
     @Get()
     async get(@Res() res): Promise<EventModel[]> {
         try {
-            const events = await this.service.get();
+            const events = await this.service.getEventDetail('');
             return res.status(200).json(events);
         } catch (e) {
             return res.status(500).json(e);
@@ -80,7 +81,8 @@ export class EventController {
         try{
             if(status == "aprovado" || status == "rejeitado" || status == "pendente"){
                 model.status = status;
-                return this.update(id, model, res);
+                const event =  await this.service.update(model, id);
+                return res.status(200).json(event);
             }else{
                 return res.status(500).json({message : 'Status Inválido'})
             }
