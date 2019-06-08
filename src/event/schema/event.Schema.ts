@@ -20,12 +20,12 @@ export const EventSchema = new mongoose.Schema({
      category: {
          type: mongoose.Schema.Types.ObjectId,
          ref: 'Category',
-         require: true,
+         required: true,
      },
      tag: [{
          type: mongoose.Schema.Types.ObjectId,
          ref: 'Tag',
-         require: true,
+         required: true,
      }],
      vacancies: {
          type: Number,
@@ -36,7 +36,7 @@ export const EventSchema = new mongoose.Schema({
          required: true
      },
     picture: {
-        type: Buffer,
+        type: String,
         required: true
     },
     startDate: {
@@ -103,7 +103,6 @@ export const EventSchema = new mongoose.Schema({
     approvedBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        require: false,
     },
     createdAt: {
         type: Date,

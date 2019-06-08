@@ -8,7 +8,7 @@ export class TagService {
     constructor(@InjectModel('Tag') private readonly model: Model<TagModel>) { }
 
     async get(): Promise<TagModel[]> {
-            return await this.model.find().exec();
+            return await this.model.find().sort({ title : 1}).exec();
     }
 
     async create(model: TagModel): Promise<TagModel> {
