@@ -16,12 +16,12 @@ export class EventService {
     }
 
     async create(model: EventModel): Promise<EventModel> {
-        
         const event = new this.model(model);
         return await event.save();
     }
 
     async update(model: EventModel, id: string): Promise<EventModel> {
+            model.status = 'pendente';
             return this.model.findOneAndUpdate({_id: id}, model, {new: true}).exec();
     }
 

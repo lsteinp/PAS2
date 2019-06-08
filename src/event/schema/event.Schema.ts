@@ -27,6 +27,9 @@ export const EventSchema = new mongoose.Schema({
          ref: 'Tag',
          require: false,
      }],
+     vacancies: {
+         type: Number
+     },
     confirmedUsers: [
         {
             type: mongoose.Schema.Types.ObjectId,
