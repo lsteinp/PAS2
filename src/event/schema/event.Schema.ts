@@ -20,21 +20,24 @@ export const EventSchema = new mongoose.Schema({
      category: {
          type: mongoose.Schema.Types.ObjectId,
          ref: 'Category',
-         require: false,
+         require: true,
      },
      tag: [{
          type: mongoose.Schema.Types.ObjectId,
          ref: 'Tag',
-         require: false,
+         require: true,
      }],
      vacancies: {
-         type: Number
+         type: Number,
+         required: true
      },
      link: {
-         type: String
+         type: String,
+         required: true
      },
     picture: {
-        type: String,
+        type: Buffer,
+        required: true
     },
     startDate: {
         type: String,
@@ -95,7 +98,7 @@ export const EventSchema = new mongoose.Schema({
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        require: true,
+        //require: true,
     },
     approvedBy: {
         type: mongoose.Schema.Types.ObjectId,

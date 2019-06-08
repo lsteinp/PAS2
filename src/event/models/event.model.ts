@@ -11,7 +11,7 @@ export class EventModel {
     public tag: TagModel;
     public hours: string;
     public link: string;
-    public picture: string;
+    public picture: Buffer;
     public address: {
          street: string;
          number: number;
