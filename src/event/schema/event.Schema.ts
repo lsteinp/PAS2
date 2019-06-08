@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 
-const typeStatus: string [] = ['Aprovado', 'Rejeitado', 'Pendente'];
+const typeStatus: string [] = ['aprovado', 'rejeitado', 'pendente'];
 
 export const EventSchema = new mongoose.Schema({
     status: {
