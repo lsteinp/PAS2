@@ -30,12 +30,9 @@ export const EventSchema = new mongoose.Schema({
      vacancies: {
          type: Number
      },
-    confirmedUsers: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-        },
-    ],
+     link: {
+         type: String
+     },
     picture: {
         type: String,
     },
