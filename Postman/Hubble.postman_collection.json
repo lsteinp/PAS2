@@ -38,7 +38,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/mail/Eventos@teste.com",
+							"raw": "http://localhost:3000/user/mail/stein@ages.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -47,7 +47,7 @@
 							"path": [
 								"user",
 								"mail",
-								"Eventos@teste.com"
+								"stein@ages.com"
 							]
 						},
 						"description": "Get user by email, passando o email como parametro"
@@ -61,7 +61,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/events/favoritedEvents/5cf1d44c221c1e1be1c911d5",
+							"raw": "http://localhost:3000/user/events/favoritedEvents/5cfaef233d7b981b0b981b01",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -71,7 +71,7 @@
 								"user",
 								"events",
 								"favoritedEvents",
-								"5cf1d44c221c1e1be1c911d5"
+								"5cfaef233d7b981b0b981b01"
 							]
 						},
 						"description": "busca eventos favoritados pelo usuario passando o id do usuario como parametro"
@@ -85,7 +85,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/events/createdEvents/5cf1d44c221c1e1be1c911d5",
+							"raw": "http://localhost:3000/user/events/createdEvents/5cfaef233d7b981b0b981b01",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -95,7 +95,7 @@
 								"user",
 								"events",
 								"createdEvents",
-								"5cf1d44c221c1e1be1c911d5"
+								"5cfaef233d7b981b0b981b01"
 							]
 						},
 						"description": "busca eventos criados pelo usuario passando o id do usuario como parametro"
@@ -109,7 +109,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/events/participatedEvents/5cf1d44c221c1e1be1c911d5",
+							"raw": "http://localhost:3000/user/events/participatedEvents/5cfaef233d7b981b0b981b01",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -119,7 +119,7 @@
 								"user",
 								"events",
 								"participatedEvents",
-								"5cf1d44c221c1e1be1c911d5"
+								"5cfaef233d7b981b0b981b01"
 							]
 						},
 						"description": "busca eventos em que o usuario participou passando o id do usuario como parametro"
@@ -133,7 +133,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/categories/interestCategories/5cf589c4a7f9ea205fb4c179",
+							"raw": "http://localhost:3000/user/categories/interestCategories/5cfaef233d7b981b0b981b01",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -143,7 +143,7 @@
 								"user",
 								"categories",
 								"interestCategories",
-								"5cf589c4a7f9ea205fb4c179"
+								"5cfaef233d7b981b0b981b01"
 							]
 						},
 						"description": "get user intereste categories do usuario, passando schema, tipo e id do usario"
@@ -157,7 +157,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/5cf589c4a7f9ea205fb4c179",
+							"raw": "http://localhost:3000/user/5cf5815d24cf2319e5eaa7d0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -165,7 +165,7 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"5cf589c4a7f9ea205fb4c179"
+								"5cf5815d24cf2319e5eaa7d0"
 							]
 						},
 						"description": "busca um usuario pelo id, passando o id como parametro"
@@ -184,10 +184,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"idEvent\": \"5ce30a27bfee0f15f2cd8f3a\"\n}"
+							"raw": "{\n\t\"idEvent\": \"5cfbe11f13b4c81fe6a3b135\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/favoritar/5cf1cd2ac0dbee15a8c035a1",
+							"raw": "http://localhost:3000/user/favoritar/5cfaef233d7b981b0b981b01",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -196,7 +196,7 @@
 							"path": [
 								"user",
 								"favoritar",
-								"5cf1cd2ac0dbee15a8c035a1"
+								"5cfaef233d7b981b0b981b01"
 							]
 						},
 						"description": "rota para favoritar evento, passando id do usuario na url e id do evento no body"
@@ -215,7 +215,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstName\": \"events\",\n\t\"lastName\": \"events\",\n\t\"email\": \"Eventooooooooos@teste.com\",\n\t\"password\": \"pass123\",\n\t\"createdEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"favoritedEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"participatedEvents\": [\"5cf1d23b221c1e1be1c911d0\", \"5cf1d246221c1e1be1c911d1\"],\n\t\"interestCategories\": [\"5cf1d2dc221c1e1be1c911d3\",\"5cf1d2dd221c1e1be1c911d4\"],\n\t\"role\": \"Admin\"\n}"
+							"raw": "{\n\t\"firstName\": \"events\",\n\t\"lastName\": \"events\",\n\t\"email\": \"Eventos@teste.com\",\n\t\"password\": \"pass123\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/user",
@@ -233,6 +233,37 @@
 					"response": []
 				},
 				{
+					"name": "Post Favoritado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idEvent\": \"5cfbe11f13b4c81fe6a3b135\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/favoritado/5cfaef233d7b981b0b981b01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"favoritado",
+								"5cfaef233d7b981b0b981b01"
+							]
+						},
+						"description": "Valida se evento foi favoritado pelo usuario"
+					},
+					"response": []
+				},
+				{
 					"name": "Post Confirmar Presenca",
 					"request": {
 						"method": "POST",
@@ -244,10 +275,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"idEvent\": \"5ce338891221fd32483d8072\"\n}"
+							"raw": "{\n\t\"idEvent\": \"5cfbe11f13b4c81fe6a3b135\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/confirmar/5cef147a4bdec0345b588fa7",
+							"raw": "http://localhost:3000/user/confirmar/5cf5815d24cf2319e5eaa7d0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -256,7 +287,7 @@
 							"path": [
 								"user",
 								"confirmar",
-								"5cef147a4bdec0345b588fa7"
+								"5cf5815d24cf2319e5eaa7d0"
 							]
 						},
 						"description": "Rota para confirmar e desconfirmar presenca, passando id do usuario como parametro e id do evento no body"
@@ -275,10 +306,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"idEvent\": \"5cf1d246221c1e1be1c911d1\"\n}"
+							"raw": "{\n\t\"idEvent\": \"5cfbe11f13b4c81fe6a3b135\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/confirmado/5cf1d44c221c1e1be1c911d5",
+							"raw": "http://localhost:3000/user/confirmado/5cf5815d24cf2319e5eaa7d0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -287,7 +318,7 @@
 							"path": [
 								"user",
 								"confirmado",
-								"5cf1d44c221c1e1be1c911d5"
+								"5cf5815d24cf2319e5eaa7d0"
 							]
 						},
 						"description": "Verifica se usuario ja confirmou presenca no evento"
@@ -295,30 +326,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Favoritado",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "http://localhost:3000/user/favoritado/5cf1d44c221c1e1be1c911d5",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"favoritado",
-								"5cf1d44c221c1e1be1c911d5"
-							]
-						},
-						"description": "Valida se evento foi favoritado pelo usuario"
-					},
-					"response": []
-				},
-				{
-					"name": "Post Update Categoria",
+					"name": "Post Favortirar Categoria",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -332,7 +340,7 @@
 							"raw": "{\n\t\"idCategoria\": \"5cf1d2dc221c1e1be1c911d3\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/updateCategoria/5cf1d44c221c1e1be1c911d5",
+							"raw": "http://localhost:3000/user/updateCategoria/5cf5815d24cf2319e5eaa7d0",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -341,7 +349,38 @@
 							"path": [
 								"user",
 								"updateCategoria",
-								"5cf1d44c221c1e1be1c911d5"
+								"5cf5815d24cf2319e5eaa7d0"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post salvar envento criado no usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idCategoria\": \"5cf1d2dc221c1e1be1c911d3\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/criar/5cf5815d24cf2319e5eaa7d0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"criar",
+								"5cf5815d24cf2319e5eaa7d0"
 							]
 						},
 						"description": ""
@@ -382,7 +421,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/Event/status/Rejeitado",
+							"raw": "http://localhost:3000/Event/status/rejeitado",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -391,7 +430,7 @@
 							"path": [
 								"Event",
 								"status",
-								"Rejeitado"
+								"rejeitado"
 							]
 						},
 						"description": "busca todos os eventos rejeitados"
@@ -405,7 +444,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/Event/status/Aprovado",
+							"raw": "http://localhost:3000/Event/status/aprovado",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -414,7 +453,7 @@
 							"path": [
 								"Event",
 								"status",
-								"Aprovado"
+								"aprovado"
 							]
 						},
 						"description": "busca eventos aprovados"
@@ -428,7 +467,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/Event/status/Pendente",
+							"raw": "http://localhost:3000/Event/status/pendente",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -437,7 +476,7 @@
 							"path": [
 								"Event",
 								"status",
-								"Pendente"
+								"pendente"
 							]
 						},
 						"description": "busca todos os eventos pendentes"
@@ -456,7 +495,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"type\": \"teste\",\n\t\"title\": \"teste\",\n\t\"description\": \"teste\",\n\t\"startDate\": \"23/02/2020\",\n\t\"startHour\": \"10:00\",\n\t\"endDate\": \"23/02/2020\",\n\t\"endHour\": \"11:00\",\n\t\"price\": \"23\",\n\t\"hours\": \"6\",\n\t\"address\": {\n\t\t\"street\": \"teste\",\n\t\t\"complements\": \"teste\",\n\t\t\"zipCode\": \"12312323\",\n\t\t\"district\": \"teste\",\n\t\t\"city\": \"teste\",\n\t\t\"state\": \"teste\",\n\t\t\"number\": \"312\"\n\t}\n}"
+							"raw": "{\n\t\"type\": \"teste\",\n\t\"title\": \"teste\",\n\t\"description\": \"teste\",\n\t\"startDate\": \"23/02/2020\",\n\t\"startHour\": \"10:00\",\n\t\"endDate\": \"23/02/2020\",\n\t\"endHour\": \"11:00\",\n\t\"price\": \"23\",\n\t\"hours\": \"6\",\n\t\"tag\": [\"5cf59846286e6825d1a48eb2\",\"5cf59849286e6825d1a48eb3\",\"5cfaeedc3d7b981b0b981b00\"],\n\t\"createdBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"approvedBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"address\": {\n\t\t\"street\": \"teste\",\n\t\t\"complements\": \"teste\",\n\t\t\"zipCode\": \"12312323\",\n\t\t\"district\": \"teste\",\n\t\t\"city\": \"teste\",\n\t\t\"state\": \"teste\",\n\t\t\"number\": \"312\"\n\t}\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/event",
@@ -495,6 +534,130 @@
 							]
 						},
 						"description": "deleta evento, passando o id"
+					},
+					"response": []
+				},
+				{
+					"name": "Put alterar evento para pendente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/pendente/5cfbe11f13b4c81fe6a3b135",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"pendente",
+								"5cfbe11f13b4c81fe6a3b135"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Put alterar evento para aprovado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/aprovado/5cfbe11f13b4c81fe6a3b135",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"aprovado",
+								"5cfbe11f13b4c81fe6a3b135"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Put alterar evento para rejeitado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/status/rejeitado/5cfbe11f13b4c81fe6a3b135",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"status",
+								"rejeitado",
+								"5cfbe11f13b4c81fe6a3b135"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Put alterar evento",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"type\": \"teste alterado\",\n\t\"title\": \"teste\",\n\t\"description\": \"teste\",\n\t\"startDate\": \"23/02/2020\",\n\t\"startHour\": \"10:00\",\n\t\"endDate\": \"23/02/2020\",\n\t\"endHour\": \"11:00\",\n\t\"price\": \"23\",\n\t\"hours\": \"6\",\n\t\"tag\": [\"5cf59846286e6825d1a48eb2\",\"5cf59849286e6825d1a48eb3\",\"5cfaeedc3d7b981b0b981b00\"],\n\t\"createdBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"approvedBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"address\": {\n\t\t\"street\": \"teste\",\n\t\t\"complements\": \"teste\",\n\t\t\"zipCode\": \"12312323\",\n\t\t\"district\": \"teste\",\n\t\t\"city\": \"teste\",\n\t\t\"state\": \"teste\",\n\t\t\"number\": \"312\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/Event/5cfbe11f13b4c81fe6a3b135",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"5cfbe11f13b4c81fe6a3b135"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event/id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/5cfbe11f13b4c81fe6a3b135",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"5cfbe11f13b4c81fe6a3b135"
+							]
+						},
+						"description": ""
 					},
 					"response": []
 				}
