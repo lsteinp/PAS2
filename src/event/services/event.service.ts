@@ -21,7 +21,7 @@ export class EventService {
     }
 
     async update(model: EventModel, id: string): Promise<EventModel> {
-        return await this.model.findOneAndUpdate({ _id: id }, model,{new: true}).exec();
+        return await this.model.findOneAndUpdate({ _id: id }, model, { new: true }).exec();
     }
 
     async getEventDetail(id: string) {
@@ -30,7 +30,7 @@ export class EventService {
         query.push({
             '$unwind': {
                 'path': '$tag',
-                'preserveNullAndEmptyArrays': false
+                'preserveNullAndEmptyArrays': true
             }
         }, {
                 '$lookup': {
@@ -52,6 +52,13 @@ export class EventService {
                     'localField': 'approvedBy',
                     'foreignField': '_id',
                     'as': 'app_doc'
+                }
+            }, {
+                '$lookup': {
+                    'from': 'categories',
+                    'localField': 'category',
+                    'foreignField': '_id',
+                    'as': 'cat_doc'
                 }
             }, {
                 '$group': {
@@ -106,6 +113,22 @@ export class EventService {
                     },
                     'address': {
                         '$first': '$address'
+                    },
+                    'picture': {
+                        '$first': '$picture'
+                    },
+                    'link': {
+                        '$first': '$link'
+                    },
+                    'vacancies': {
+                        '$first': '$vacancies'
+                    },
+                    'category': {
+                        '$first': {
+                            '$arrayElemAt': [
+                                '$cat_doc', 0
+                            ]
+                        }
                     }
                 }
             }, {
@@ -130,9 +153,13 @@ export class EventService {
                     'approvedBy.interestCategories': 0,
                     'approvedBy.favoritedEvents': 0,
                     'approvedBy.participatedEvents': 0,
-                    'approvedBy.createdEvents': 0
+                    'approvedBy.createdEvents': 0,
+                    'category.createdAt': 0,
+                    'category.updatedAt': 0,
+                    'category.__v': 0
                 }
-            })
+            }
+        )
         if (id) {
             query[0] = {
                 ...{
