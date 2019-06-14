@@ -54,7 +54,7 @@ export class EventController {
     async getEventDetail(@Param('id') id: string, @Res() res): Promise<EventModel> {
         try{
             var event = await this.service.getEventDetail(id);
-            return res.status(200).json(event);
+            return res.status(200).json(event[0]);
         }
         catch (e){
             return res.status(500).json(e);
