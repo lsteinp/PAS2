@@ -26,7 +26,9 @@ export class EventService {
 
     async getEventDetail(id: string) {
         var query = [];
-
+        if(id){
+            query.push('');
+        }
         query.push({
             '$unwind': {
                 'path': '$tag',
