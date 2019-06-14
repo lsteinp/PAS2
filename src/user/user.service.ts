@@ -44,12 +44,21 @@ export class UserService {
   }
 
   async updateCategorias(idUser: string, idCategoria: string): Promise<UserModel> {
-    const user = await this.findOneById(idUser);
-    const convertido = Types.ObjectId(idCategoria); 
-    console.log(user.interestCategories.indexOf(convertido))
-    if (user.interestCategories.indexOf(convertido) > -1) {
-      this.model.findOneAndUpdate(
-        { _id: idUser },
+    var user = await this.findOneById(idUser);
+    const convertido = Types.ObjectId(idCategoria);
+
+    if (user.interestCategories.indexOf(convertido) < 0) {
+      console.log("achou")
+      return this.model.findOneAndUpdate(
+        { _id: idUser }, 
+        { $addToSet: {
+          interestCategories: idCategoria
+        }}
+      );
+    } else {
+      console.log("não achou")
+      return this.model.findOneAndUpdate(
+        { _id: idUser }, 
         { $pull: {
           interestCategories: convertido,
         }},
