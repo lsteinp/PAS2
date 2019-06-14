@@ -9,7 +9,7 @@ export class CategoryService {
     constructor(@InjectModel('Category') private readonly model: Model<CategoryModel>) { }
 
     async get(): Promise<CategoryModel[]> {
-            return await this.model.find().exec();
+            return await this.model.find().sort({ title : 1}).exec();
     }
 
     async create(model: CategoryModel): Promise<CategoryModel> {

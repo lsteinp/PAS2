@@ -60,11 +60,19 @@ export class UserService {
       return this.model.findOneAndUpdate(
         { _id: idUser }, 
         { $pull: {
+          interestCategories: convertido,
+        }},
+      ).exec();
+    } else {
+      this.model.findOneAndUpdate(
+        { _id: idUser },
+        { $push: {
           interestCategories: idCategoria
-        }}
-      );
+        }},
+      ).exec();
     }
-    }
+    return await this.findOneById(idUser);
+  }
 
   async updateConfirmar(idUser: string, idEvent: string): Promise<UserModel> {
     var user = await this.findOneById(idUser);

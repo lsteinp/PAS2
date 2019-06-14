@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 
-const typeStatus: string [] = ['Aprovado', 'Rejeitado', 'Pendente'];
+const typeStatus: string [] = ['aprovado', 'rejeitado', 'pendente'];
 
 export const EventSchema = new mongoose.Schema({
     status: {
@@ -20,21 +20,24 @@ export const EventSchema = new mongoose.Schema({
      category: {
          type: mongoose.Schema.Types.ObjectId,
          ref: 'Category',
-         require: false,
+         required: true,
      },
      tag: [{
          type: mongoose.Schema.Types.ObjectId,
          ref: 'Tag',
-         require: false,
+         required: true,
      }],
-    confirmedUsers: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-        },
-    ],
+     vacancies: {
+         type: Number,
+         required: true
+     },
+     link: {
+         type: String,
+         required: true
+     },
     picture: {
         type: String,
+        required: true
     },
     startDate: {
         type: String,
@@ -95,12 +98,11 @@ export const EventSchema = new mongoose.Schema({
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        require: false,
+        //require: true,
     },
     approvedBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        require: false,
     },
     createdAt: {
         type: Date,
