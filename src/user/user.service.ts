@@ -47,7 +47,7 @@ export class UserService {
     var user = await this.findOneById(idUser);
     const convertido = Types.ObjectId(idCategoria);
 
-    if (user.interestCategories.indexOf(convertido) > -1) {
+    if (user.interestCategories.indexOf(convertido) < 0) {
       console.log("achou")
       return this.model.findOneAndUpdate(
         { _id: idUser }, 
