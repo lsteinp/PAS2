@@ -63,15 +63,7 @@ export class UserService {
           interestCategories: convertido,
         }},
       ).exec();
-    } else {
-      this.model.findOneAndUpdate(
-        { _id: idUser },
-        { $push: {
-          interestCategories: idCategoria
-        }},
-      ).exec();
     }
-    return await this.findOneById(idUser);
   }
 
   async updateConfirmar(idUser: string, idEvent: string): Promise<UserModel> {
