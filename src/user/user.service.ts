@@ -69,9 +69,9 @@ export class UserService {
   async updateConfirmar(idUser: string, idEvent: string): Promise<UserModel> {
     var user = await this.findOneById(idUser);
     const convertido = Types.ObjectId(idEvent);
-    if (user.participatedEvents.indexOf(convertido) > -1) {
-      var index = user.participatedEvents.indexOf(convertido);
-      user.participatedEvents.splice(index);
+    var index = user.participatedEvents.indexOf(convertido);
+    if (index > -1) {
+      user.participatedEvents.splice(index, 1);
     }
     else {
       user.participatedEvents.push(convertido);
@@ -84,9 +84,9 @@ export class UserService {
   async updateCriar(idUser: string, idEvent: string): Promise<UserModel> {
     var user = await this.findOneById(idUser);
     const convertido = Types.ObjectId(idEvent);
-    if (user.createdEvents.indexOf(convertido) > -1) {
-      var index = user.createdEvents.indexOf(convertido);
-      user.createdEvents.splice(index);
+    var index = user.createdEvents.indexOf(convertido);
+    if (index > -1) {
+      user.createdEvents.splice(index, 1);
     }
     else {
       user.createdEvents.push(convertido);
