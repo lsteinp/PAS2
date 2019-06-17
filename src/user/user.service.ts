@@ -188,6 +188,10 @@ export class UserService {
             'path': '$events'
           }
         }, {
+          '$match': {
+            'events.status': 'aprovado'
+          }
+        }, {
           '$unwind': {
             'path': '$events.tag', 
             'preserveNullAndEmptyArrays': true
