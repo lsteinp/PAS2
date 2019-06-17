@@ -4,7 +4,7 @@ import { TagModel } from './../models/tag.model';
 import { CategoryModel } from './../models/category.model';
 import { EventModel } from './../models/event.model';
 import { InjectModel } from '@nestjs/mongoose';
-import { Injectable, Body, Res, Query } from '@nestjs/common';
+import { Injectable, Body, Res } from '@nestjs/common';
 import { Model, Types } from 'mongoose';
 
 @Injectable()
