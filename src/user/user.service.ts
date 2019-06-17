@@ -48,7 +48,6 @@ export class UserService {
     const convertido = Types.ObjectId(idCategoria);
 
     if (user.interestCategories.indexOf(convertido) < 0) {
-      console.log("achou")
       return this.model.findOneAndUpdate(
         { _id: idUser }, 
         { $addToSet: {
@@ -56,7 +55,6 @@ export class UserService {
         }}
       );
     } else {
-      console.log("não achou")
       return this.model.findOneAndUpdate(
         { _id: idUser }, 
         { $pull: {

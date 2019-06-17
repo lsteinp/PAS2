@@ -23,10 +23,7 @@ export class EventController {
             return res.status(200).json(event);
         } catch (e) {
             if(idEvent){
-                console.log(idEvent);
-                console.log('deve deletar');
                 await this.service.deleteEventByObjectId(idEvent);
-                console.log('deletou');
             }
             return res.status(500).json(e);
         }
