@@ -2,6 +2,7 @@ import { CategoryModel } from './category.model';
 import { TagModel } from './tag.model';
 import { UserModel } from 'src/user/models/user.model';
 export class EventModel {
+    public id: string;
     public status: string;
     public title: string;
     public description: string;

@@ -138,17 +138,6 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
-
-    @Post('criar/:id')
-    async updateCriar(@Res() res, @Param('id') idUser, @Body('idEvent') idEvent): Promise<UserModel>{
-        try{
-            var user = await this.service.updateCriar(idUser, idEvent);
-            return res.status(200).json(user);
-        }
-        catch(e){
-            return res.status(500).json(e);
-        }
-    }
   
     toDate(string){
         var dateString = string;
