@@ -9,13 +9,14 @@ import { EventService } from './services/event.service';
 import { EventController } from './controllers/event.controller';
 import { Module } from '@nestjs/common';
 import { CategoryController } from './controllers/category.controller';
+import { UserModule } from 'src/user/user.module';
 
 @Module({
     imports: [MongooseModule.forFeature([
         {name: 'Event', schema: EventSchema},
         {name: 'Category', schema: CategorySchema},
         {name: 'Tag', schema: TagSchema},
-    ])],
+    ]), UserModule],
     controllers: [EventController, TagController, CategoryController],
     providers: [EventService, TagService, CategoryService],
 })

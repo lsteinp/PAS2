@@ -4,17 +4,27 @@ import { EventModel } from './../models/event.model';
 import { Get, Controller, Post, Body, Res, Query, Param, Delete, Put } from '@nestjs/common';
 import { EventSchema } from '../schema/event.Schema';
 import { async } from 'rxjs/internal/scheduler/async';
+import { UserService } from 'src/user/user.service';
 
 @Controller('event')
 export class EventController {
-    constructor(private readonly service: EventService) { }
+    constructor(private readonly service: EventService,
+                private readonly userService: UserService) { }
 
     @Post()
     async create(@Body() model: EventModel, @Res() res) {
         try {
+            var idEvent = null;
             const event = await this.service.create(model);
+            idEvent = event.id;
+            if(event){
+                const user = await this.userService.updateCriar(model.createdBy.toString(), event.id);
+            }
             return res.status(200).json(event);
         } catch (e) {
+            if(idEvent){
+                await this.service.deleteEventByObjectId(idEvent);
+            }
             return res.status(500).json(e);
         }
     }
