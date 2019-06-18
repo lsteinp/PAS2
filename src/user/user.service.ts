@@ -154,6 +154,133 @@ export class UserService {
     return query[0].type;
   }
 
+  async getEventByCategories(id: string){
+    var query = [
+        {
+          '$match': {
+            '_id': Types.ObjectId(id)
+          }
+        }, {
+          '$unwind': {
+            'path': '$interestCategories', 
+            'preserveNullAndEmptyArrays': true
+          }
+        }, {
+          '$lookup': {
+            'from': 'events', 
+            'localField': 'interestCategories', 
+            'foreignField': 'category', 
+            'as': 'events_doc'
+          }
+        }, {
+          '$project': {
+            '_id': 0, 
+            'events': '$events_doc'
+          }
+        }, {
+          '$project': {
+            'events.createdAt': 0, 
+            'events.updatedAt': 0, 
+            'events.__v': 0
+          }
+        }, {
+          '$unwind': {
+            'path': '$events'
+          }
+        }, {
+          '$match': {
+            'events.status': 'aprovado'
+          }
+        }, {
+          '$unwind': {
+            'path': '$events.tag', 
+            'preserveNullAndEmptyArrays': true
+          }
+        }, {
+          '$lookup': {
+            'from': 'tags', 
+            'localField': 'events.tag', 
+            'foreignField': '_id', 
+            'as': 'tags_doc'
+          }
+        }, {
+          '$lookup': {
+            'from': 'categories', 
+            'localField': 'events.category', 
+            'foreignField': '_id', 
+            'as': 'cat_doc'
+          }
+        }, {
+          '$group': {
+            '_id': '$events._id', 
+            'status': {
+              '$first': '$events.status'
+            }, 
+            'tag': {
+              '$addToSet': {
+                '$arrayElemAt': [
+                  '$tags_doc', 0
+                ]
+              }
+            }, 
+            'title': {
+              '$first': '$events.title'
+            }, 
+            'description': {
+              '$first': '$events.description'
+            }, 
+            'startDate': {
+              '$first': '$events.startDate'
+            }, 
+            'startHour': {
+              '$first': '$events.startHour'
+            }, 
+            'endHour': {
+              '$first': '$events.endHour'
+            }, 
+            'endDate': {
+              '$first': '$events.endDate'
+            }, 
+            'price': {
+              '$first': '$events.price'
+            }, 
+            'hours': {
+              '$first': '$events.hours'
+            }, 
+            'address': {
+              '$first': '$events.address'
+            }, 
+            'picture': {
+              '$first': '$events.picture'
+            }, 
+            'link': {
+              '$first': '$events.link'
+            }, 
+            'vacancies': {
+              '$first': '$events.vacancies'
+            }, 
+            'category': {
+              '$first': {
+                '$arrayElemAt': [
+                  '$cat_doc', 0
+                ]
+              }
+            }
+          }
+        }, {
+          '$project': {
+            'tag.createdAt': 0, 
+            'tag.updatedAt': 0, 
+            'tag.__v': 0, 
+            'category.createdAt': 0, 
+            'category.updatedAt': 0, 
+            'category.__v': 0
+          }
+        }
+      ]
+    return await this.model.aggregate([query]);
+}
+
   async getEventConfir(idUser: string, idEvent: string): Promise<boolean> {
     var user = await this.findOneById(idUser);
     const convertido = Types.ObjectId(idEvent);

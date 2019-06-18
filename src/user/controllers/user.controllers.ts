@@ -149,6 +149,17 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
+
+    @Get('category/:idUser')
+    async getUserEventByCategory(@Param('idUser') idUser: string,@Res() res): Promise<UserModel>{
+        try{
+            var user = await this.service.getEventByCategories(idUser);
+            return res.status(200).json(user);
+        }
+        catch(e){
+            return res.status(500).json(e);
+        }
+    }
   
     toDate(string){
         var dateString = string;
