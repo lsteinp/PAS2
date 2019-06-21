@@ -1,12 +1,12 @@
 import * as mongoose from 'mongoose';
 
-const typeStatus: string [] = ['Aprovado', 'Rejeitado', 'Pendente'];
+const typeStatus: string [] = ['aprovado', 'rejeitado', 'pendente'];
 
 export const EventSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: typeStatus,
-        default: typeStatus[0],
+        default: typeStatus[2],
         required: true,
     },
     title: {
@@ -20,30 +20,41 @@ export const EventSchema = new mongoose.Schema({
      category: {
          type: mongoose.Schema.Types.ObjectId,
          ref: 'Category',
-         require: false,
+         required: true,
      },
      tag: [{
          type: mongoose.Schema.Types.ObjectId,
          ref: 'Tag',
-         require: false,
+         required: true,
      }],
-    confirmedUsers: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
-        },
-    ],
+     vacancies: {
+         type: Number,
+         required: true
+     },
+     link: {
+         type: String,
+         required: true
+     },
     picture: {
         type: String,
+        required: true
     },
     startDate: {
         type: String,
         default: Date.now,
         required: true,
     },
+    startHour: {
+        type: String,
+        required: true,
+    },
     endDate: {
         type: String,
         default: Date.now,
+        required: true,
+    },
+    endHour: {
+        type: String,
         required: true,
     },
     price: {
@@ -79,16 +90,19 @@ export const EventSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
+        number: {
+            type: Number,
+            required: true,
+        }
     },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        require: false,
+        require: true,
     },
     approvedBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        require: false,
     },
     createdAt: {
         type: Date,

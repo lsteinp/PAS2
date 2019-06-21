@@ -7,6 +7,7 @@ export const UserSchema = new mongoose.Schema({
     role: {
         type: String,
         default: typeRole[1],
+        enum: typeRole,
         required: true,
     },
     firstName: {
