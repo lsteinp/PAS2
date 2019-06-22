@@ -298,4 +298,10 @@ export class UserService {
       return false;
     }
   }
+
+  async criarAdmin(email: string): Promise<UserModel>{
+    var user =  await this.model.findOne({ email: email }).exec();
+    user.role = "Admin";
+    return await this.model.findOneAndUpdate({ email: email }, user, { new: true }).exec()
+  }
 }
