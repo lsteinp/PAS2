@@ -93,6 +93,9 @@ export class EventService {
                     'endDate': {
                         '$first': '$endDate'
                     },
+                    'observation':{
+                        '$first': '$observation'
+                    },
                     'price': {
                         '$first': '$price'
                     },
