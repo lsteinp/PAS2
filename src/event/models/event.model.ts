@@ -26,7 +26,7 @@ export class EventModel {
     public startHour: string;
     public endDate: string;
     public endHour: string;
-    public observations: string;
+    public observation: string;
     public createdBy: UserModel;
     public approvedBy: UserModel;
 }

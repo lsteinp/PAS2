@@ -59,7 +59,6 @@ export const EventSchema = new mongoose.Schema({
     },
     observation:{
         type: String,
-        required: true,
     },
     price: {
         type: Number,
