@@ -160,6 +160,17 @@ export class UserController {
             return res.status(500).json(e);
         }
     }
+
+    @Post('criarAdmin/:email')
+    async criarAdmin(@Param('email') email: string,@Res() res): Promise<UserModel>{
+        try{
+            var user = await this.service.criarAdmin(email);
+            return res.status(200).json(user);
+        }
+        catch(e){
+            return res.status(500).json(e);
+        }
+    }
   
     toDate(string){
         var dateString = string;

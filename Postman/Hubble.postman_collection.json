@@ -173,6 +173,29 @@
 					"response": []
 				},
 				{
+					"name": "Get Events by Favorite Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/user/category/5cfbed3a7bebd9252cf3cf9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"category",
+								"5cfbed3a7bebd9252cf3cf9a"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
 					"name": "Put Favoritar Evento",
 					"request": {
 						"method": "PUT",
@@ -357,21 +380,13 @@
 					"response": []
 				},
 				{
-					"name": "Post salvar envento criado no usuario",
+					"name": "Post Criar Admin",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"idCategoria\": \"5cf1d2dc221c1e1be1c911d3\"\n}"
-						},
+						"header": [],
+						"body": {},
 						"url": {
-							"raw": "http://localhost:3000/user/criar/5cf5815d24cf2319e5eaa7d0",
+							"raw": "http://localhost:3000/user/criarAdmin/lunne@lunne.com",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -379,8 +394,8 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"criar",
-								"5cf5815d24cf2319e5eaa7d0"
+								"criarAdmin",
+								"lunne@lunne.com"
 							]
 						},
 						"description": ""
@@ -408,6 +423,28 @@
 							"port": "3000",
 							"path": [
 								"Event"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event/id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/Event/5cfbe11f13b4c81fe6a3b135",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Event",
+								"5cfbe11f13b4c81fe6a3b135"
 							]
 						},
 						"description": ""
@@ -495,7 +532,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"type\": \"teste\",\n\t\"title\": \"teste\",\n\t\"description\": \"teste\",\n\t\"startDate\": \"23/02/2020\",\n\t\"startHour\": \"10:00\",\n\t\"endDate\": \"23/02/2020\",\n\t\"endHour\": \"11:00\",\n\t\"price\": \"23\",\n\t\"hours\": \"6\",\n\t\"tag\": [\"5cf59846286e6825d1a48eb2\",\"5cf59849286e6825d1a48eb3\",\"5cfaeedc3d7b981b0b981b00\"],\n\t\"createdBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"approvedBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"address\": {\n\t\t\"street\": \"teste\",\n\t\t\"complements\": \"teste\",\n\t\t\"zipCode\": \"12312323\",\n\t\t\"district\": \"teste\",\n\t\t\"city\": \"teste\",\n\t\t\"state\": \"teste\",\n\t\t\"number\": \"312\"\n\t}\n}"
+							"raw": "{\n\t\"title\": \"teste\",\n\t\"description\": \"teste\",\n\t\"startDate\": \"23/02/2020\",\n\t\"startHour\": \"10:00\",\n\t\"endDate\": \"23/02/2020\",\n\t\"endHour\": \"11:00\",\n\t\"price\": \"23\",\n\t\"hours\": \"6\",\n\t\"tag\": [\"5cf59846286e6825d1a48eb2\",\"5cf59849286e6825d1a48eb3\",\"5cfaeedc3d7b981b0b981b00\"],\n\t\"createdBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"address\": {\n\t\t\"street\": \"teste\",\n\t\t\"complements\": \"teste\",\n\t\t\"zipCode\": \"12312323\",\n\t\t\"district\": \"teste\",\n\t\t\"city\": \"teste\",\n\t\t\"state\": \"teste\",\n\t\t\"number\": \"312\"\n\t},\n\t\"picture\": \"picture\",\n\t\"link\": \"link\",\n\t\"vacancies\": 31,\n\t\"category\": \"5cfbfec31f32372e4d03a3a7\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/event",
@@ -623,28 +660,6 @@
 							"mode": "raw",
 							"raw": "{\n\t\"type\": \"teste alterado\",\n\t\"title\": \"teste\",\n\t\"description\": \"teste\",\n\t\"startDate\": \"23/02/2020\",\n\t\"startHour\": \"10:00\",\n\t\"endDate\": \"23/02/2020\",\n\t\"endHour\": \"11:00\",\n\t\"price\": \"23\",\n\t\"hours\": \"6\",\n\t\"tag\": [\"5cf59846286e6825d1a48eb2\",\"5cf59849286e6825d1a48eb3\",\"5cfaeedc3d7b981b0b981b00\"],\n\t\"createdBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"approvedBy\": \"5cf5815d24cf2319e5eaa7d0\",\n\t\"address\": {\n\t\t\"street\": \"teste\",\n\t\t\"complements\": \"teste\",\n\t\t\"zipCode\": \"12312323\",\n\t\t\"district\": \"teste\",\n\t\t\"city\": \"teste\",\n\t\t\"state\": \"teste\",\n\t\t\"number\": \"312\"\n\t}\n}"
 						},
-						"url": {
-							"raw": "http://localhost:3000/Event/5cfbe11f13b4c81fe6a3b135",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"Event",
-								"5cfbe11f13b4c81fe6a3b135"
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Get Event/id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
 						"url": {
 							"raw": "http://localhost:3000/Event/5cfbe11f13b4c81fe6a3b135",
 							"protocol": "http",
