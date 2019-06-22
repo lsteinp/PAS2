@@ -75,7 +75,6 @@ export const EventSchema = new mongoose.Schema({
         },
         complements: {
             type: String,
-            required: true,
         },
         zipCode: {
             type: Number,
