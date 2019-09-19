@@ -1,10 +1,10 @@
 {
     "ambientes": {
       "development": {
-        "api_url": "mongodb://localhost/hubble-data"
+        "api_url": "mongodb://localhost/PAS-data"
       },
       "hml": {
-        "api_url": "mongodb://hubbledb/hubble-data"
+        "api_url": "mongodb://hubbledb/PAS-data"
       },
       "prod": {
         "api_url": ""

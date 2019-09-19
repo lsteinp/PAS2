@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 var uniqueValidator = require('mongoose-unique-validator');
 
-const typeRole = ['Admin', 'User'];
+const typeRole = ['Avaliador', 'User'];
 
 export const UserSchema = new mongoose.Schema({
     role: {
@@ -18,9 +18,6 @@ export const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    phoneNumber: {
-        type: Number,
-    },
     email: {
         type: String,
         required: true,
@@ -30,30 +27,14 @@ export const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    interestCategories: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Category',
-        },
-    ],
-    favoritedEvents: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Event',
-        },
-    ],
-    participatedEvents: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Event',
-        },
-    ],
-    createdEvents: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Event',
-        },
-    ],
+    group: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Group',
+        require: true,
+    },
+    curso:{
+        type: String
+    },
     createdAt: {
         type: Date,
         default: Date.now,
