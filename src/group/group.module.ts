@@ -3,16 +3,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { GroupController } from './controllers/group.controllers';
 import { Module } from '@nestjs/common';
 import { GroupService } from './group.service';
-import { PassportModule } from '@nestjs/passport';
+import { UserModule } from 'src/user/user.module';
 
 
-const passportModule = PassportModule.register({ defaultStrategy: 'jwt' });
 @Module({
-  imports: [MongooseModule.forFeature([{name: 'User', schema: GroupSchema}]),
-  passportModule],
+  imports: [MongooseModule.forFeature([{name: 'Group', schema: GroupSchema}]),UserModule],
   controllers: [GroupController],
   providers: [GroupService],
   exports: [GroupService],
 })
-export class UserModule {}
+export class GroupModule {}
 
