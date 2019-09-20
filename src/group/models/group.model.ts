@@ -7,10 +7,10 @@ export class GroupModel {
     public createdBy: UserModel;
     public evaluation: {
         evaluator: UserModel;
-        software: number;
-        process: number;
-        pitch: number;
-        innovation: number;
-        teamFormation: number;
+        software: Number;
+        process: Number;
+        pitch: Number;
+        innovation: Number;
+        teamFormation: Number;
     }[];
 }
