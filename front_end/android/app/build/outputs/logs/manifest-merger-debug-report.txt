@@ -1,0 +1,232 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:1:1-26:12
+MERGED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-gesture-handler] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-reanimated] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-screens] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\ff636fc67d6699f6aefc5248ba876313\AndroidManifest.xml:2:1-13:12
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\c9914ffd64a645e715ddbf5bef04d960\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2bc9c16e1754f9ee0d6e187bab6db729\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\0231750eb30ee839ce783452cabf3205\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\4ba00227c0d5ec88644aa0bbfa4118f1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f8d987b30664f47a5cc0c7290e3a91cb\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\30c2d3409a09004b0fccfdb54b6da4d0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\d83c64da9791ba8b8fe6fe4f167de91f\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b6dbb1ea336caff4329ff347c4dec276\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\34ba6c1a2b4a1bb2b7b3a5d84bc63360\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\46ac8e2b35581edec97c2b6c9044c8f5\AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\34dcaf04c1d8d869d4f5972558fc39be\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\d097f9b3eae4aefbb12f6520d3bc63a9\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\26d710b371d8649d18ce1ab5991b4940\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\8b0952d962e8941eff49e848d691d687\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\e0a40b4627c4712bbf67efb4eeb6721e\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\6d282265fcfee16d8f283391443ccc03\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5c861726a3c14eee3495ff6c869d47f9\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\579b5ba9f0601d07bde5a07e941e49bc\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\83e380c1ecdebf6293e600ae614a182f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\ea96371b080544c762eef320ae185a08\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b56273b4315dafd3460ee83eda0dd59f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\98290ea43c68b23cc82ff3ee61a69f0b\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\7000ca411e7094ce0aa42f3255ead106\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2b9a58f27602c9b0a3b1e8314b18fb63\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f9be21bb311ba5108322bfc74d3d1343\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\c7705486c1cbf2fa895f25822bdc38f1\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\7b7879715ed8c22584e4eec0b6036b67\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5a298f48e1806b9d424cdce43a95d735\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\a4beb7c159082bdc06e09c916f415bdf\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\3e4cd2ed1b1cf6d72d28e22fe18674ff\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\43c95be388ded7eaf4667545c95e894d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b084479edaa8bfc0a74bb8f10d15a31c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5dc3957d349b90398abf4180b9f26732\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2b55493815e63456c5b48c2616572065\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\a60e3b3f77410421939610b3dc2c3a51\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\025e13bbcdc228de12a6b9a6b2453cf9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f6375e2e20cfbc8e22689c361be1485d\AndroidManifest.xml:2:1-9:12
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:2:1-8:12
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:2:1-8:12
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:2:1-8:12
+	package
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:2:3-26
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:2:3-26
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:1:1-26:12
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:1:1-26:12
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:4:22-64
+application
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:6:5-24:19
+MERGED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:6:5-24:19
+MERGED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:6:5-24:19
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\ff636fc67d6699f6aefc5248ba876313\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\ff636fc67d6699f6aefc5248ba876313\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\46ac8e2b35581edec97c2b6c9044c8f5\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\46ac8e2b35581edec97c2b6c9044c8f5\AndroidManifest.xml:11:5-20
+MERGED from [androidx.core:core:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f9be21bb311ba5108322bfc74d3d1343\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f9be21bb311ba5108322bfc74d3d1343\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\c7705486c1cbf2fa895f25822bdc38f1\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\c7705486c1cbf2fa895f25822bdc38f1\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f9be21bb311ba5108322bfc74d3d1343\AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:8:7-39
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:8:7-39
+	tools:ignore
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:7:75-114
+	android:roundIcon
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:10:7-52
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:10:7-52
+	tools:targetApi
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:7:54-74
+	android:icon
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:9:7-41
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:9:7-41
+	android:allowBackup
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:11:7-34
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:11:7-34
+	android:theme
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:12:7-38
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:12:7-38
+	android:usesCleartextTraffic
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:7:18-53
+	android:name
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:7:7-38
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:7:7-38
+activity#com.front_end.MainActivity
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:13:7-22:18
+	android:label
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:15:9-41
+	android:windowSoftInputMode
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:17:9-51
+	android:configChanges
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:16:9-79
+	android:name
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:14:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:18:9-21:25
+action#android.intent.action.MAIN
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:19:13-65
+	android:name
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:19:21-62
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:20:13-73
+	android:name
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:20:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:23:7-84
+	android:name
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml:23:17-81
+uses-sdk
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-gesture-handler] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-reanimated\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\ff636fc67d6699f6aefc5248ba876313\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.60.5] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\ff636fc67d6699f6aefc5248ba876313\AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\c9914ffd64a645e715ddbf5bef04d960\AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\c9914ffd64a645e715ddbf5bef04d960\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2bc9c16e1754f9ee0d6e187bab6db729\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2bc9c16e1754f9ee0d6e187bab6db729\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\0231750eb30ee839ce783452cabf3205\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\0231750eb30ee839ce783452cabf3205\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\4ba00227c0d5ec88644aa0bbfa4118f1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\4ba00227c0d5ec88644aa0bbfa4118f1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f8d987b30664f47a5cc0c7290e3a91cb\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f8d987b30664f47a5cc0c7290e3a91cb\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\30c2d3409a09004b0fccfdb54b6da4d0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\30c2d3409a09004b0fccfdb54b6da4d0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\d83c64da9791ba8b8fe6fe4f167de91f\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\d83c64da9791ba8b8fe6fe4f167de91f\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b6dbb1ea336caff4329ff347c4dec276\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b6dbb1ea336caff4329ff347c4dec276\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\34ba6c1a2b4a1bb2b7b3a5d84bc63360\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\34ba6c1a2b4a1bb2b7b3a5d84bc63360\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\46ac8e2b35581edec97c2b6c9044c8f5\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.6.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\46ac8e2b35581edec97c2b6c9044c8f5\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\34dcaf04c1d8d869d4f5972558fc39be\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\34dcaf04c1d8d869d4f5972558fc39be\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\d097f9b3eae4aefbb12f6520d3bc63a9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\d097f9b3eae4aefbb12f6520d3bc63a9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\26d710b371d8649d18ce1ab5991b4940\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\26d710b371d8649d18ce1ab5991b4940\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\8b0952d962e8941eff49e848d691d687\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\8b0952d962e8941eff49e848d691d687\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\e0a40b4627c4712bbf67efb4eeb6721e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\e0a40b4627c4712bbf67efb4eeb6721e\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\6d282265fcfee16d8f283391443ccc03\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\6d282265fcfee16d8f283391443ccc03\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5c861726a3c14eee3495ff6c869d47f9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5c861726a3c14eee3495ff6c869d47f9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\579b5ba9f0601d07bde5a07e941e49bc\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\579b5ba9f0601d07bde5a07e941e49bc\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\83e380c1ecdebf6293e600ae614a182f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\83e380c1ecdebf6293e600ae614a182f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\ea96371b080544c762eef320ae185a08\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\ea96371b080544c762eef320ae185a08\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b56273b4315dafd3460ee83eda0dd59f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b56273b4315dafd3460ee83eda0dd59f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\98290ea43c68b23cc82ff3ee61a69f0b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\98290ea43c68b23cc82ff3ee61a69f0b\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\7000ca411e7094ce0aa42f3255ead106\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\7000ca411e7094ce0aa42f3255ead106\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2b9a58f27602c9b0a3b1e8314b18fb63\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2b9a58f27602c9b0a3b1e8314b18fb63\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f9be21bb311ba5108322bfc74d3d1343\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f9be21bb311ba5108322bfc74d3d1343\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\c7705486c1cbf2fa895f25822bdc38f1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\c7705486c1cbf2fa895f25822bdc38f1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\7b7879715ed8c22584e4eec0b6036b67\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\7b7879715ed8c22584e4eec0b6036b67\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5a298f48e1806b9d424cdce43a95d735\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5a298f48e1806b9d424cdce43a95d735\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\a4beb7c159082bdc06e09c916f415bdf\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\a4beb7c159082bdc06e09c916f415bdf\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\3e4cd2ed1b1cf6d72d28e22fe18674ff\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\3e4cd2ed1b1cf6d72d28e22fe18674ff\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\43c95be388ded7eaf4667545c95e894d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\43c95be388ded7eaf4667545c95e894d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b084479edaa8bfc0a74bb8f10d15a31c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\b084479edaa8bfc0a74bb8f10d15a31c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5dc3957d349b90398abf4180b9f26732\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\5dc3957d349b90398abf4180b9f26732\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2b55493815e63456c5b48c2616572065\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\2b55493815e63456c5b48c2616572065\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\a60e3b3f77410421939610b3dc2c3a51\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\a60e3b3f77410421939610b3dc2c3a51\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\025e13bbcdc228de12a6b9a6b2453cf9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\025e13bbcdc228de12a6b9a6b2453cf9\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f6375e2e20cfbc8e22689c361be1485d\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] C:\Users\Phillip\.gradle\caches\transforms-2\files-2.1\f6375e2e20cfbc8e22689c361be1485d\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from C:\Users\Phillip\Documents\Desenvolvimento\PAS2\front_end\android\app\src\debug\AndroidManifest.xml:5:22-75
