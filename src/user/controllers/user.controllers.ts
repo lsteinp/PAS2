@@ -3,7 +3,6 @@ import { UserService } from './../user.service';
 import { Model, Types } from 'mongoose';
 import { Get, Controller, Post, Body, Res, Param, Put } from '@nestjs/common';
 import { async } from 'rxjs/internal/scheduler/async';
-import { CategorySchema } from 'src/event/schema/category.schema';
 
 @Controller('user')
 export class UserController {
@@ -22,7 +21,7 @@ export class UserController {
     @Get()
     async get(@Res() res): Promise<UserModel[]> {
         try {
-            const users = await this.service.get();
+            const users = await this.service.getUserDetail('');
             return res.status(200).json(users);
         } catch (e) {
             return res.status(500).json(e);
@@ -32,7 +31,7 @@ export class UserController {
     @Get(':id')
     async getUser(@Param('id') id: string,@Res() res): Promise<UserModel>{
         try{
-            var user = await this.service.findOneById(id);
+            var user = await this.service.getUserDetail(id);
             return res.status(200).json(user);
         }
         catch(e){
