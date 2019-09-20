@@ -6,7 +6,7 @@ export const GroupSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: typeStatus,
-        default: typeStatus[2],
+        default: typeStatus[1],
         required: true,
     },
     title: {
