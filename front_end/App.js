@@ -3,14 +3,16 @@ import React from 'react';
 import { Button, View, Text } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import LoginScreen from './src/screens/LoginScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import CadastrarAlunoScreen from './src/screens/CadastrarAlunoScreen';
 
 const AppNavigator = createStackNavigator(
   {
-    Login: LoginScreen,
+    Home: HomeScreen,
+    CadastrarAluno: CadastrarAlunoScreen
   },
   {
-    initialRouteName: 'Login',
+    initialRouteName: 'Home',
   }
 );
 

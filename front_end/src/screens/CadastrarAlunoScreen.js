@@ -1,39 +1,56 @@
 import React from 'react';
 import { 
-    Button, 
-    View, 
-    Text,
+    View,
     StyleSheet,
-    TextInput
+    TextInput,
+    Text
 } from 'react-native';
 import BotaoGenerico from '../components/BotaoGenerico';
 
-export default class LoginScreen extends React.Component {
+export default class CadastrarAlunoScreen extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: "center" }}>
                 <Text style={styles.titulo}>
-                    Login
+                    Cadastrar Aluno
                 </Text>
 
                 <TextInput
-                    autoCapitalize={"none"}
-                    keyboardType={"email-address"}
-                    placeholder={'email@example.com'}
+                    autoCapitalize={"sentences"}
+                    placeholder={'Nome'}
+                    style={styles.input}
+                />
+
+                <TextInput
+                    autoCapitalize={"sentences"}
+                    placeholder={'Sobrenome'}
                     style={styles.input}
                 />
 
                 <TextInput
                     autoCapitalize={"none"}
-                    placeholder={'password'}
+                    keyboardType={"email-address"}
+                    placeholder={'E-mail'}
+                    style={styles.input}
+                />
+
+                <TextInput
+                    autoCapitalize={"none"}
+                    placeholder={'Senha'}
                     style={styles.input}
                     secureTextEntry={true}
+                />
+
+                <TextInput                    
+                    autoCapitalize={"sentences"}
+                    placeholder={'Curso'}
+                    style={styles.input}
                 />
 
                 <BotaoGenerico
                     acao={() => console.log('kek')}
                     style={{ marginVertical: 20 }}
-                    titulo={'ENTRAR'}
+                    titulo={'CADASTRAR'}
                 />
             </View>
         )
